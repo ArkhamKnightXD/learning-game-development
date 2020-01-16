@@ -1,0 +1,7 @@
+Tiempo: 32.0559704 - Intentos: 10 
+Tiempo: 27.3049984 - Intentos: 9 
+Tiempo: 52.3786109 - Intentos: 19 
+Tiempo: 64.9863092 - Intentos: 10 
+Tiempo: 37.9431104 - Intentos: 12 
+Tiempo: 32.5061944 - Intentos: 12 
+Tiempo: 43.5408229 - Intentos: 11 
