@@ -1,0 +1,8 @@
+Como hacer animaciones en unity y a usar el animator
+
+
+
+si indicamos que un objeto es kinematic eso quiere decir que no sera afectado por las fisicas, usamos esto para elementos que simplemente queremos que se desplacen.
+
+
+prefabs se refiere a objeto prefabricados se debe de usar con un script instantiador
