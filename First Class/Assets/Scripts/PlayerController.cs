@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-       // gameController = GameObject.Find("GlobalScriptText").GetComponent<GameController>();
+        gameController = GameObject.Find("GlobalScriptText").GetComponent<GameController>();
     }
 
     //tenemos update y fixedupdate time.deltatime debe de usarse cuando se usa solo update, de lo contrari no
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
         gameObject.transform.Translate(deltaPosition);
 
+        // mathf.Clamp sirve para restringir el movimiento de x entre los valores minimos y maximos especificados
         gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, MINX, MAXX), gameObject.transform.position.y, gameObject.transform.position.z);
     }
 

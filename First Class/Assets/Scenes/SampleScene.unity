@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 268852410}
   - component: {fileID: 268852409}
   m_Layer: 0
-  m_Name: Lives
+  m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,8 +291,9 @@ GameObject:
   - component: {fileID: 341083407}
   - component: {fileID: 341083406}
   - component: {fileID: 341083405}
+  - component: {fileID: 341083408}
   m_Layer: 0
-  m_Name: Global Script Text
+  m_Name: GlobalScriptText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,6 +372,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341083408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341083404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0170dcb21a14b3552bca877beaaaab63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentScore: 0
+  CurrentLives: 0
+  ScoreText: {fileID: 380904992}
+  LivesText: {fileID: 268852409}
+  GameOverText: {fileID: 634995803}
+  BallPrefab: {fileID: 7922114551192676555, guid: b6d21fdf16e44e64eb99ab0f810ac193,
+    type: 3}
 --- !u!1 &380904991
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +403,7 @@ GameObject:
   - component: {fileID: 380904993}
   - component: {fileID: 380904992}
   m_Layer: 0
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

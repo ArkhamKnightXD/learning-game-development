@@ -47,7 +47,6 @@ public class GameController : MonoBehaviour
        if (CurrentLives <= 0)
         {
             GameOverText.SetActive(true);
-            return;
         }      
 
         Instantiate(BallPrefab, new Vector3(Random.Range(MINX, MAXX),6,0), Quaternion.identity);
