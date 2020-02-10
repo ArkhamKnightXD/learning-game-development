@@ -66,6 +66,17 @@ public class GameController : MonoBehaviour
        CurrentLives = CurrentLives > 0 ? CurrentLives - 1 : 0;
        LivesText.text = $"Vidas: {CurrentLives}"; 
 
-        return 0;
+       if (CurrentLives == 0)
+       {
+           StartCoroutine("SendScore");
+           GameOverText.SetActive(true);
+       }
+
+        return CurrentLives;
+    }
+
+    IEnumerator SendScore()
+    {
+        yield return gameObject.GetComponent<WebServiceClient>().SendWebRequest(CurrentLives);
     }
 }

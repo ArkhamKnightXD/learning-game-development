@@ -26,10 +26,10 @@ public class PlayerController : MonoBehaviour
     //tenemos update y fixedupdate time.deltatime debe de usarse cuando se usa solo update, de lo contrari no
     void Update()
     {
-        // translate es como un += para la posicion.
-
+        // Aqui basicamente consigo la distancia a la que se debe mover mi objeto
         deltaPosition = new Vector3(Input.GetAxis("Horizontal"),0) * _speedX * Time.deltaTime;
 
+        // translate es como un += para la posicion.
         gameObject.transform.Translate(deltaPosition);
 
         // mathf.Clamp sirve para restringir el movimiento de x entre los valores minimos y maximos especificados

@@ -10,11 +10,11 @@ public class DeadZoneController : MonoBehaviour
     {
         // Esto busca en unity un objeto con el nombre de GlobalScriptsText y cuando lo encuentre nos retorna el objeto
 
-        gameController = GameObject.Find("GlobalScriptsText").GetComponent<GameController>();
+        gameController = GameObject.Find("GlobalScriptText").GetComponent<GameController>();
     }
 
-// cuando usamos con un element trigger usamos esta funcion para que cuando haya collision suceda lo 
-// que se realiza en esta funcion.
+// cuando usamos box collider y activamos la opcion istrigger debemos de usamos esta funcion para 
+//que cuando haya collision suceda lo  que se realiza en esta funcion.
     void OnTriggerEnter(Collider other)
     {
         

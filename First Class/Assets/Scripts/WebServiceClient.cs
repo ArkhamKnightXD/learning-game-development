@@ -5,39 +5,32 @@ using UnityEngine.Networking;
 
 public class WebServiceClient : MonoBehaviour
 {
-
      public class GravilotaScore{
-         int id;
-         string PlayerName;
-         float Score;
+        public int id;
+        public string PlayerName;
+        public float Score;
      }
+
     UnityWebRequest www;
 
-     const string webServiceUrl = "http://localhost:64844/api/values"; 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine("SendWebRequest");
-    }
+    const string webServiceUrl = "http://localhost:8888/save"; 
 
-    // Update is called once per frame
+    public IEnumerator SendWebRequest(float newScore){
 
-    IEnumerator SendWebRequest(){
+        GravilotaScore playerScore = new GravilotaScore();
 
-        GravilotaScore newScore = new GravilotaScore();
+        playerScore.id = 5;
 
-        newScore.id = 5;
+        playerScore.PlayerName = "karvin";
 
-        www = new UnityWebRequest(webServiceUrl, "POST");
-        www.SetRequestHeader("Conten-Type", "application/json");
+        playerScore.Score = newScore;
+
+        www = new UnityWebRequest(webServiceUrl, JsonUtility.ToJson(playerScore));
+
+        www.SetRequestHeader("Content-Type", "application/json");
 
         yield return www.SendWebRequest();
 
         Debug.Log(www.downloadHandler.text);     
-    }
-    void Update()
-    {
-
-        
     }
 }
