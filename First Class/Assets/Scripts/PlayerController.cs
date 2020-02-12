@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
         // translate es como un += para la posicion.
         gameObject.transform.Translate(deltaPosition);
 
+        //GameObject.FindGameObjectsWithTag("Blue")
+
+        //gameObject.tag
         // mathf.Clamp sirve para restringir el movimiento de x entre los valores minimos y maximos especificados
         gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, MINX, MAXX), gameObject.transform.position.y, gameObject.transform.position.z);
     }
