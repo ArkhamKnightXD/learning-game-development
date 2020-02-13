@@ -2,35 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using System;
 
 public class WebServiceClient : MonoBehaviour
 {
-     public class GravilotaScore{
-        public int id;
+
+    [Serializable]
+    public class GravilotaScore
+    {
+        public int Id;
         public string PlayerName;
-        public float Score;
-     }
-
+        public double Score;
+    }
     UnityWebRequest www;
+    
+    
+    void Start()
+    {
 
-    const string webServiceUrl = "http://localhost:8888/save"; 
+    }
 
-    public IEnumerator SendWebRequest(float newScore){
+   public IEnumerator SendWebRequest(double score)
+    {
+       
+       GravilotaScore newScore = new GravilotaScore();
 
-        GravilotaScore playerScore = new GravilotaScore();
+       newScore.Id = 0;
+       newScore.PlayerName = "pepe";
+       newScore.Score = score;
 
-        playerScore.id = 5;
+       string webServiceURL = $"localhost:8888/save/{newScore.PlayerName}/{newScore.Score}";
 
-        playerScore.PlayerName = "karvin";
+       www = UnityWebRequest.Put(webServiceURL, JsonUtility.ToJson(newScore));
+       www.SetRequestHeader("Content-Type", "application/json");
+       yield return www.SendWebRequest();
 
-        playerScore.Score = newScore;
-
-        www = new UnityWebRequest(webServiceUrl, JsonUtility.ToJson(playerScore));
-
-        www.SetRequestHeader("Content-Type", "application/json");
-
-        yield return www.SendWebRequest();
-
-        Debug.Log(www.downloadHandler.text);     
+        Debug.Log(www.downloadHandler.text);
     }
 }

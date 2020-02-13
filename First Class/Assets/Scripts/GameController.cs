@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
 
     public GameObject BallPrefab;
 
+    public 
+
     //Estas dos constante representan el minimo y el maximo valor que puede tener la canasta en el juego
     // Osea establecemos estos limites para que las pelotas no puedan ser generadas fuera de la pantalla de juego    
     const float MINX = -8.20f;
@@ -46,7 +48,7 @@ public class GameController : MonoBehaviour
 
        if (CurrentLives <= 0)
         {
-            GameOverText.SetActive(true);
+            return;
         }      
 
         Instantiate(BallPrefab, new Vector3(Random.Range(MINX, MAXX),6,0), Quaternion.identity);
