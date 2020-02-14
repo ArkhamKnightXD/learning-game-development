@@ -17,7 +17,7 @@ public class WebServiceClient : MonoBehaviour
 
     UnityWebRequest www;
 
-    const string webServiceURL = "http://localhost:8888/request";
+    const string webServiceURL = "localhost:8888/requestG";
     
     
    public IEnumerator SendWebRequest(float score)

@@ -79,6 +79,6 @@ public class GameController : MonoBehaviour
 
     IEnumerator SendScore()
     {
-        yield return gameObject.GetComponent<WebServiceClient>().SendWebRequest(CurrentLives);
+        yield return gameObject.GetComponent<WebServiceClient>().SendWebRequest(CurrentScore);
     }
 }
