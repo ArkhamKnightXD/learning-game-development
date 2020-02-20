@@ -17,7 +17,9 @@ public class WebServiceClient : MonoBehaviour
 
     UnityWebRequest www;
 
-    const string webServiceURL = "localhost:8888/requestG";
+    const string webServiceURL = "localhost:8888/request";
+
+    const string webServiceURL2 = "localhost:8888/scores";
     
     
    public IEnumerator SendWebRequest(float score)
@@ -35,4 +37,15 @@ public class WebServiceClient : MonoBehaviour
 
        Debug.Log(www.downloadHandler.text);
     }
+
+    /*public IEnumerator GetWebRequest(float score)
+    {
+       
+       www = UnityWebRequest.Get(webServiceURL2);
+       www.SetRequestHeader("Content-Type", "application/json");
+
+       yield return www.ToString();
+
+       Debug.Log(www.downloadHandler.text);
+    }*/
 }

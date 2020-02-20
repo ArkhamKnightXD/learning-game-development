@@ -5,14 +5,9 @@ using UnityEngine;
 public class TestGameController : MonoBehaviour
 {
 
-    const float MINX = -8.20f;
-    const float MAXX= 2.60f;
+    const float MINX = -8.0f;
+    const float MAXX= 8.0f;
 
-    const float TOWERPOSITION= -7.79f; 
-
-    const float MINY = -2.4f;
-
-    const float MAXY = 4.10f;
     public int CurrentScore;
 
     public int CurrentLives;
@@ -22,37 +17,45 @@ public class TestGameController : MonoBehaviour
 
     public GameObject GameOverText;
 
+    public GameObject RetryText;
+
     public GameObject BlueCube;
 
     public GameObject GreenCube;
 
-    Vector3 BlueCubePosition;
+    public GameObject RedCube;
 
-    
-    Vector3 BlueCubePosition2;
+    Vector3 BlueCubePosition;
 
     Vector3 GreenCubePosition;
 
-    Vector3 GreenCubePosition2;
+    Vector3 RedCubePosition;
+
 
     void Start()
     {
+
+        AudioManagerTest.Instance.PlaySoundEffect(AudioManagerTest.SoundEffect.Song);
         CurrentScore = 0;
 
-        CurrentLives = 10;
+        CurrentLives = 5;
 
         LivesText = GameObject.Find("LivesText").GetComponent<TextMesh>();
 
         GameOverText = GameObject.Find("GameOverText");
 
+        RetryText = GameObject.Find("RetryText");
+
+        RetryText.SetActive(false);
+
         GameOverText.SetActive(false);
+        
 
-        InvokeRepeating("InstantiateBlueCube", 6, 10.0f);
+        InvokeRepeating("InstantiateBlueCube", 0, 2.0f);
 
-        InvokeRepeating("InstantiateGreenCube", 12, 8.0f);
+        InvokeRepeating("InstantiateGreenCube", 15, 10.0f);
 
-        InvokeRepeating("InstantiateCubeTower", 0, 25.0f);
-
+        InvokeRepeating("InstantiateRedCube", 9, 7.0f);
 
     }
 
@@ -63,6 +66,7 @@ public class TestGameController : MonoBehaviour
        if (CurrentLives <= 0)
         {
             GameOverText.SetActive(true);
+            return;
         }      
 
 
@@ -73,12 +77,13 @@ public class TestGameController : MonoBehaviour
     }
 
 
-     void InstantiateGreenCube()
+    void InstantiateGreenCube()
     {
 
        if (CurrentLives <= 0)
         {
             GameOverText.SetActive(true);
+            return;
         }      
 
 
@@ -89,36 +94,22 @@ public class TestGameController : MonoBehaviour
     }
 
 
-     void InstantiateCubeTower()
+    void InstantiateRedCube()
     {
 
        if (CurrentLives <= 0)
         {
             GameOverText.SetActive(true);
+            return;
         }      
 
 
-        BlueCubePosition = new Vector3(TOWERPOSITION,MINY,0);
-
-        GreenCubePosition = new Vector3(TOWERPOSITION,0,0);
-
-        BlueCubePosition2 = new Vector3(TOWERPOSITION,2,0);
+        RedCubePosition = new Vector3(Random.Range(MINX, MAXX),6,0);
      
-
-        Instantiate(GreenCube, GreenCubePosition, Quaternion.identity);
+        Instantiate(RedCube, RedCubePosition, Quaternion.identity);
         
-        Instantiate(BlueCube, BlueCubePosition, Quaternion.identity);
-
-        Instantiate(BlueCube, BlueCubePosition2, Quaternion.identity);
-
     }
 
-
-    private void OnTriggerEnter(Collider other){
-
-
-        Destroy(other.gameObject);
-    }
 
 
      public int IncrementScore(){
@@ -129,4 +120,55 @@ public class TestGameController : MonoBehaviour
 
         return CurrentScore;
     }
+
+
+    public int IncrementLives()
+    {
+       CurrentLives++;
+       LivesText.text = $"Vidas: {CurrentLives}"; 
+
+
+       return CurrentLives;
+    }
+
+    public int DecrementLives(int identifier)
+    {
+
+       if (identifier == 1)
+       {
+
+            CurrentLives = CurrentLives > 0 ? CurrentLives - 1 : 0;
+            LivesText.text = $"Vidas: {CurrentLives}";           
+       } 
+
+
+       if (identifier == 2)
+       {
+
+            CurrentLives = CurrentLives > 1? CurrentLives - 2 : 0;
+            LivesText.text = $"Vidas: {CurrentLives}";           
+       } 
+ 
+
+       if (CurrentLives <= 0)
+       {
+           StartCoroutine("SendScore");
+           GameOverText.SetActive(true);
+           RetryText.SetActive(true);
+           AudioManagerTest.Instance.PlaySoundEffect(AudioManagerTest.SoundEffect.GameOver);
+       }
+
+        return CurrentLives;
+    }
+
+    IEnumerator SendScore()
+    {
+        yield return gameObject.GetComponent<WebServiceClient>().SendWebRequest(CurrentScore);
+    }
+
+
+    /*IEnumerator GetScore()
+    {
+        yield return gameObject.GetComponent<WebServiceClient>().Send;
+    }*/
 }
