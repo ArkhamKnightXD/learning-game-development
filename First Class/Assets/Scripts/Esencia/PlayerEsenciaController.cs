@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerEsenciaController : MonoBehaviour
 {
+
+    public TextMesh PlayerLivesText;
+
+    public GameObject gameOverText;
     
     const float Y_MIN_LIMIT = -4.22f;
 
@@ -11,10 +15,25 @@ public class PlayerEsenciaController : MonoBehaviour
 
     Vector3 MovementSpeed = new Vector3(0,10f), _deltaposition;
 
-    ScoreController scoreController = GameObject.Find("GlobalScriptsText").GetComponent<ScoreController>();
-    void Start()
+    ScoreController scoreController;
+
+    int _lives = 3;
+
+    public bool isGameOver;
+    
+    private void Awake()
     {
         
+
+        scoreController = GameObject.Find("GlobalScriptsText").GetComponent<ScoreController>();
+        gameOverText = GameObject.Find("GameOverText");
+
+        gameOverText.SetActive(false);
+    }
+
+    private void Start()
+    {
+        PlayerLivesText.text = _lives.ToString();
     }
 
     void Update()
@@ -51,7 +70,19 @@ public class PlayerEsenciaController : MonoBehaviour
             case "Purple":
             scoreController.IncrementScore(EssenceType.Purple);
             break;
+
+            case "Enemy":
+            _lives--;
+            PlayerLivesText.text = _lives.ToString();
+            if (_lives <=0)
+            {
+                isGameOver = true;
+                gameOverText.SetActive(true);
+            }
+            break;
+     
             
         }
+        Destroy(other.gameObject);
     }
 }

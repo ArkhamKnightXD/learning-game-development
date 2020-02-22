@@ -16,11 +16,20 @@ using UnityEngine;
 public class EsenciaInstatiator : MonoBehaviour
 {
 
-    public GameObject BlueEssence,GreenEssence, YellowEssence, PurpleEssence, RedEssence, PinkEssence; 
+    public GameObject BlueEssence,GreenEssence, YellowEssence, PurpleEssence, RedEssence, PinkEssence, Enemy; 
 
     Dictionary<EssenceType, GameObject> EssencePrefabs;
 
     float _lastSpawnedTime, _spawnDeltaTime = 0.5f;
+
+    float enemyProbability = 16.7f;
+
+    PlayerEsenciaController _playerEsenciaController;
+
+    private void Awake()
+    {
+        _playerEsenciaController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEsenciaController>();
+    }
     void Start()
     {
         _lastSpawnedTime = Time.time;
@@ -39,15 +48,25 @@ public class EsenciaInstatiator : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - _lastSpawnedTime > _spawnDeltaTime)
+        if (!_playerEsenciaController.isGameOver && Time.time - _lastSpawnedTime > _spawnDeltaTime)
         {
             _lastSpawnedTime = Time.time;
             InstatiateEssence();
+            InstantiateEnemy();
         }
     }
 
     void InstatiateEssence()
     {
         Instantiate(EssencePrefabs[(EssenceType)Random.Range(0,6)], new Vector3(10,Random.Range(-4, 5)), Quaternion.identity);
+    }
+
+    void InstantiateEnemy()
+    {
+        if (Random.Range(0f, 100f) <= enemyProbability * 100)
+        {
+            Instantiate(Enemy, new Vector3(10,Random.Range(-4, 5)), Quaternion.identity);
+        }
+
     }
 }
