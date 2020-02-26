@@ -20,15 +20,24 @@ public class PlayerEsenciaController : MonoBehaviour
     int _lives = 3;
 
     public bool isGameOver;
+
+    Animator _animator;
+
+    float _lastVerticalAxis;
+
+    WebServiceEsenciaClient webServiceEsenciaClient;
     
     private void Awake()
     {
-        
+        _animator = GetComponent<Animator>();
 
         scoreController = GameObject.Find("GlobalScriptsText").GetComponent<ScoreController>();
+
         gameOverText = GameObject.Find("GameOverText");
 
         gameOverText.SetActive(false);
+
+        webServiceEsenciaClient = GameObject.Find("GlobalScriptsText").GetComponent<WebServiceEsenciaClient>();
     }
 
     private void Start()
@@ -38,9 +47,23 @@ public class PlayerEsenciaController : MonoBehaviour
 
     void Update()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+
         _deltaposition = MovementSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
         gameObject.transform.Translate(_deltaposition);
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, Mathf.Clamp(gameObject.transform.position.y, Y_MIN_LIMIT, Y_MAX_LIMIT), gameObject.transform.position.z);
+
+
+        if (_lastVerticalAxis != Input.GetAxis("Vertical"))
+        {
+            _lastVerticalAxis = Input.GetAxis("Vertical");
+
+            _animator.SetFloat("VerticalAxis", _lastVerticalAxis);            
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,15 +97,17 @@ public class PlayerEsenciaController : MonoBehaviour
             case "Enemy":
             _lives--;
             PlayerLivesText.text = _lives.ToString();
-            if (_lives <=0)
+            if (_lives ==0)
             {
                 isGameOver = true;
                 gameOverText.SetActive(true);
+                webServiceEsenciaClient.SaveScore();
             }
             break;
      
             
         }
+        AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.Capture);
         Destroy(other.gameObject);
     }
 }

@@ -19,7 +19,7 @@ public class WebServiceClient : MonoBehaviour
 
     const string webServiceURL = "localhost:8888/request";
 
-    const string webServiceURL2 = "localhost:8888/scores";
+   // const string webServiceURL2 = "localhost:8888/scores";
     
     
    public IEnumerator SendWebRequest(float score)

@@ -30,6 +30,7 @@ public class EsenciaInstatiator : MonoBehaviour
     {
         _playerEsenciaController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEsenciaController>();
     }
+    
     void Start()
     {
         _lastSpawnedTime = Time.time;

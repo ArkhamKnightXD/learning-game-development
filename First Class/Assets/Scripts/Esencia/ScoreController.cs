@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
-    int[] _scores = new int[6];
+    public int[] _scores = new int[6];
 
     public TextMesh BlueScoreText,RedScoreText,GreenScoreText,YellowScoreText,PinkScoreText, PurpleScoreText;
 

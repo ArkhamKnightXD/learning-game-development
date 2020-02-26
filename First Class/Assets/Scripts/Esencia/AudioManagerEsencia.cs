@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class AudioManagerEsencia : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static AudioManagerEsencia Instance;
+    public AudioSource EnemyExplosion;
+
+    public AudioSource CubeCapture;
+
+    public AudioSource Song;
+
+    private void Awake()
     {
-        
+        Instance = this;
+    }
+    
+    public enum SoundEffect
+    {
+        Explosion,
+        Capture,
+        Song
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySoundEffect(SoundEffect type)
     {
-        
+        switch (type)
+        {
+
+        case SoundEffect.Song:
+            Song.Play();
+            break;
+
+        case SoundEffect.Capture:
+            CubeCapture.Play();
+            break;
+
+        case SoundEffect.Explosion:
+            EnemyExplosion.Play();
+            break;
+            
+        }
     }
 }
