@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
  public enum EssenceType 
     {
         Blue = 0,
@@ -15,21 +14,24 @@ using UnityEngine;
 
 public class EsenciaInstatiator : MonoBehaviour
 {
+    float _lastSpawnedTime;
 
-    public GameObject BlueEssence,GreenEssence, YellowEssence, PurpleEssence, RedEssence, PinkEssence, Enemy; 
-
-    Dictionary<EssenceType, GameObject> EssencePrefabs;
-
-    float _lastSpawnedTime, _spawnDeltaTime = 0.5f;
+    float _spawnDeltaTime = 0.5f;
 
     float enemyProbability = 16.7f;
 
+    Dictionary<EssenceType, GameObject> EssencePrefabs;
+
     PlayerEsenciaController _playerEsenciaController;
+
+    public GameObject BlueEssence,GreenEssence, YellowEssence, PurpleEssence, RedEssence, PinkEssence, Enemy; 
+
 
     private void Awake()
     {
         _playerEsenciaController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEsenciaController>();
     }
+
     
     void Start()
     {
@@ -52,15 +54,18 @@ public class EsenciaInstatiator : MonoBehaviour
         if (!_playerEsenciaController.isGameOver && Time.time - _lastSpawnedTime > _spawnDeltaTime)
         {
             _lastSpawnedTime = Time.time;
+
             InstatiateEssence();
             InstantiateEnemy();
         }
     }
+    
 
     void InstatiateEssence()
     {
         Instantiate(EssencePrefabs[(EssenceType)Random.Range(0,6)], new Vector3(10,Random.Range(-4, 5)), Quaternion.identity);
     }
+
 
     void InstantiateEnemy()
     {

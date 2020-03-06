@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class PlayerEsenciaController : MonoBehaviour
 {
-
-    public TextMesh PlayerLivesText;
-
-    public GameObject gameOverText;
-    
     const float Y_MIN_LIMIT = -4.22f;
 
     const float Y_MAX_LIMIT = 4.22f;
+
+    int _lives = 3;
+
+    float _lastVerticalAxis;
+
+    Animator _animator;
 
     Vector3 MovementSpeed = new Vector3(0,10f), _deltaposition;
 
     ScoreController scoreController;
 
-    int _lives = 3;
+    WebServiceEsenciaClient webServiceEsenciaClient;
 
     public bool isGameOver;
 
-    Animator _animator;
+    public TextMesh PlayerLivesText;
 
-    float _lastVerticalAxis;
+    public GameObject gameOverText;
 
-    WebServiceEsenciaClient webServiceEsenciaClient;
-    
+        
     private void Awake()
     {
         _animator = GetComponent<Animator>();

@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class CannonBallBehaviour : MonoBehaviour
 {
-
     Vector3 _currentSpeed;
 
     bool _shooted;
-    void Start()
-    {
-        
-    }
+
 
     void Update()
     {
@@ -20,11 +16,12 @@ public class CannonBallBehaviour : MonoBehaviour
             return;
         }
 
+        // Aqui aplicamos la formula fisica para poder determinar la velocidad final: vf = vt +gt^2
         gameObject.transform.Translate(_currentSpeed * Time.deltaTime + Physics.gravity * Mathf.Pow(Time.deltaTime, 2)/ 2);
-        _currentSpeed += Physics.gravity * Time.deltaTime;
 
-        
+        _currentSpeed += Physics.gravity * Time.deltaTime;    
     }
+
 
     public void Shoot(float triggerSpeed, float triggerAngle)
     {

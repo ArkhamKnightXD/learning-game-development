@@ -8,6 +8,7 @@ public class ScoreController : MonoBehaviour
 
     public TextMesh BlueScoreText,RedScoreText,GreenScoreText,YellowScoreText,PinkScoreText, PurpleScoreText;
 
+
     public void IncrementScore(EssenceType number)
     {
         _scores[(int)number]++;    
@@ -36,9 +37,7 @@ public class ScoreController : MonoBehaviour
 
             case EssenceType.Purple:
                 PurpleScoreText.text = _scores[(int)number].ToString();
-                break;
-            
+                break;       
         }    
     }
-
 }

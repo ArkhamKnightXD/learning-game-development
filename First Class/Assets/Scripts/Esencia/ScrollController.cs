@@ -5,9 +5,11 @@ using UnityEngine;
 public class ScrollController : MonoBehaviour
 {
     Vector3 _currentPosition;
+
     Vector3 _scrollingSpeed = new Vector3(0.3f,0);
 
     MeshRenderer _renderer;
+
 
     void Start()
     {
@@ -17,6 +19,7 @@ public class ScrollController : MonoBehaviour
     void Update()
     {
         _currentPosition += _scrollingSpeed *Time.deltaTime;
+        
         _renderer.material.mainTextureOffset = _currentPosition;
     }
 }

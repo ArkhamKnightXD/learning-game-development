@@ -5,17 +5,20 @@ using UnityEngine;
 public class AudioManagerEsencia : MonoBehaviour
 {
     public static AudioManagerEsencia Instance;
+
     public AudioSource EnemyExplosion;
 
     public AudioSource CubeCapture;
 
     public AudioSource Song;
 
+
     private void Awake()
     {
         Instance = this;
     }
-    
+
+
     public enum SoundEffect
     {
         Explosion,
@@ -23,11 +26,11 @@ public class AudioManagerEsencia : MonoBehaviour
         Song
     }
 
+
     public void PlaySoundEffect(SoundEffect type)
     {
         switch (type)
         {
-
         case SoundEffect.Song:
             Song.Play();
             break;
@@ -38,8 +41,7 @@ public class AudioManagerEsencia : MonoBehaviour
 
         case SoundEffect.Explosion:
             EnemyExplosion.Play();
-            break;
-            
+            break;            
         }
     }
 }

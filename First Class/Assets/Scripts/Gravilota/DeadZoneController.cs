@@ -20,7 +20,7 @@ public class DeadZoneController : MonoBehaviour
         
         //Destroy, destruye un objeto, osea lo desaparece del juego
         Destroy(other.gameObject);
-        gameController.IncrementScore();
+        gameController.DecrementLives();
 
         AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.Explode);
     }

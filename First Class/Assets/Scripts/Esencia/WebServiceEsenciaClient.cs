@@ -17,14 +17,14 @@ public class WebServiceEsenciaClient : MonoBehaviour
         public float blueScore;
         public float pinkScore;
         public float purpleScore;
-
     }
+
 
     ScoreController scoreController;
 
+
     public void Awake()
     {
-
         scoreController = GetComponent<ScoreController>();
     }
 
@@ -35,7 +35,6 @@ public class WebServiceEsenciaClient : MonoBehaviour
     }
 
     
-
     UnityWebRequest www1;
 
     const string webServiceURLEsence = "localhost:8888/esence/request";
@@ -43,12 +42,13 @@ public class WebServiceEsenciaClient : MonoBehaviour
     const string webServiceURLEsence2 = "localhost:8888/esence/scores";
 
     
-   public IEnumerator SendWebRequest()
+    public IEnumerator SendWebRequest()
     {
        
        Esence newScore = new Esence();
 
        newScore.id = 0;
+
        newScore.playerName = "Karvin";
 
        newScore.greenScore = scoreController._scores[1];
@@ -65,19 +65,21 @@ public class WebServiceEsenciaClient : MonoBehaviour
        
 
        www1 = UnityWebRequest.Put(webServiceURLEsence, JsonUtility.ToJson(newScore));
+
        www1.SetRequestHeader("Content-Type", "application/json");
+
        yield return www1.SendWebRequest();
 
        Debug.Log(www1.downloadHandler.text);
     }
 
+
     public IEnumerator GetTopScore()
     {
         www1 = UnityWebRequest.Get(webServiceURLEsence2);
+
         www1.SetRequestHeader("Content-Type", "application/json");
 
-        yield return www1.SendWebRequest();
-
-        
+        yield return www1.SendWebRequest(); 
     }
 }
