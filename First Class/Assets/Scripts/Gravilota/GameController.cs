@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
 
     public GameObject BallPrefab;
 
-    public 
+
 
     //Estas dos constante representan el minimo y el maximo valor que puede tener la canasta en el juego
     // Osea establecemos estos limites para que las pelotas no puedan ser generadas fuera de la pantalla de juego    
