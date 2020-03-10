@@ -325,6 +325,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
+<<<<<<< HEAD
   m_Size: {x: 47.94907, y: 0.81840134, z: 1}
   m_Center: {x: -1.5745907, y: 0.09079933, z: 0}
 --- !u!4 &262082224
@@ -445,6 +446,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
+=======
+>>>>>>> Esencia
   m_Size: {x: 2.56, y: 2.5243554, z: 0.2}
   m_Center: {x: 0, y: -0.017822266, z: 0}
 --- !u!1 &519420028
@@ -1781,7 +1784,11 @@ MonoBehaviour:
   FruitGet: {fileID: 1518273479}
   PlayerJump: {fileID: 1518273479}
   GameOver: {fileID: 1518273478}
+<<<<<<< HEAD
 --- !u!1 &1756346281
+=======
+--- !u!1 &1538558940
+>>>>>>> Esencia
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1789,16 +1796,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1756346284}
   - component: {fileID: 1756346283}
   - component: {fileID: 1756346282}
   m_Layer: 0
   m_Name: Grass3
+=======
+  - component: {fileID: 1538558942}
+  - component: {fileID: 1538558941}
+  m_Layer: 0
+  m_Name: Untitled_0
+>>>>>>> Esencia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!65 &1756346282
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1813,12 +1828,19 @@ BoxCollider:
   m_Size: {x: 2.56, y: 2.5243554, z: 0.2}
   m_Center: {x: 0, y: -0.017822266, z: 0}
 --- !u!212 &1756346283
+=======
+--- !u!212 &1538558941
+>>>>>>> Esencia
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1756346281}
+=======
+  m_GameObject: {fileID: 1538558940}
+>>>>>>> Esencia
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1849,23 +1871,36 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: 606b3b9c0285e0e4f8a517ac9b0d5099, type: 3}
+=======
+  m_Sprite: {fileID: 21300000, guid: 69228509a1981464a86dccda52ed19c8, type: 3}
+>>>>>>> Esencia
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD
   m_Size: {x: 2.56, y: 2.56}
+=======
+  m_Size: {x: 0.34, y: 0.59}
+>>>>>>> Esencia
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!4 &1756346284
+=======
+--- !u!4 &1538558942
+>>>>>>> Esencia
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1756346281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.01, y: -4.5, z: 0}
@@ -1875,6 +1910,17 @@ Transform:
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778278663
+=======
+  m_GameObject: {fileID: 1538558940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.93, y: -2.35, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1744926431
+>>>>>>> Esencia
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1882,6 +1928,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1778278666}
   - component: {fileID: 1778278665}
   - component: {fileID: 1778278664}
@@ -1889,10 +1936,18 @@ GameObject:
   m_Layer: 0
   m_Name: Fruit
   m_TagString: Fruit
+=======
+  - component: {fileID: 1744926433}
+  - component: {fileID: 1744926432}
+  m_Layer: 0
+  m_Name: fruit_6
+  m_TagString: Untagged
+>>>>>>> Esencia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!65 &1778278664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1907,12 +1962,19 @@ BoxCollider:
   m_Size: {x: 0.84, y: 0.85333335, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1778278665
+=======
+--- !u!212 &1744926432
+>>>>>>> Esencia
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1778278663}
+=======
+  m_GameObject: {fileID: 1744926431}
+>>>>>>> Esencia
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1943,23 +2005,36 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: b36c850bf3dc92d4fa11efedc1c72a58, type: 3}
+=======
+  m_Sprite: {fileID: 21300012, guid: 18fa9b88633495e47a14c621d2cf7f4d, type: 3}
+>>>>>>> Esencia
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
+<<<<<<< HEAD
   m_Size: {x: 1.26, y: 1.28}
+=======
+  m_Size: {x: 0.56, y: 1.28}
+>>>>>>> Esencia
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!4 &1778278666
+=======
+--- !u!4 &1744926433
+>>>>>>> Esencia
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1778278663}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.48, y: -2.51, z: 0}
@@ -1980,6 +2055,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492e2232d9cecb843ab80880ce4625a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  m_GameObject: {fileID: 1744926431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2946703, y: -3.7656803, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Esencia
 --- !u!1 &1962287548
 GameObject:
   m_ObjectHideFlags: 0
