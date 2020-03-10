@@ -18,6 +18,8 @@ public class GameController : MonoBehaviour
 
     public GameObject WinText;
 
+    //cod example  _playerEsenciaController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEsenciaController>();
+
     void Start()
     {
         AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameSong);
@@ -37,6 +39,17 @@ public class GameController : MonoBehaviour
         GameOverText.SetActive(false);
         WinText.SetActive(false);
         
+    }
+
+
+
+    public int IncrementScore(){
+
+        CurrentScore++;
+
+        ScoreText.text = CurrentScore.ToString();
+
+        return CurrentScore;
     }
 
     

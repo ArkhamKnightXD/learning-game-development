@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource DamageTaken;
 
-    public AudioSource CoinGet;
+    public AudioSource FruitGet;
 
     public AudioSource PlayerJump;
 
@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
     {
         GameSong,
         DamageTaken,
-        CoinGet,
+        FruitGet,
         PlayerJump,
         GameOver
     }
@@ -42,8 +42,8 @@ public class AudioManager : MonoBehaviour
             DamageTaken.Play();
             break;
 
-        case SoundEffect.CoinGet:
-            CoinGet.Play();
+        case SoundEffect.FruitGet:
+            FruitGet.Play();
             break;
 
         case SoundEffect.PlayerJump:

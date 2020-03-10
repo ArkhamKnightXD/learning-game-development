@@ -1851,9 +1851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c5363f4f7f4ca82a502119811dedbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameOver: 0
   PlayerLivesText: {fileID: 1919140616}
   gameOverText: {fileID: 281760806}
-  isGameOver: 0
 --- !u!65 &2139591678
 BoxCollider:
   m_ObjectHideFlags: 0
