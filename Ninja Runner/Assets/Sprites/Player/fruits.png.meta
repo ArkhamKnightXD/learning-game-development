@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: b36c850bf3dc92d4fa11efedc1c72a58
-=======
-guid: a0b8204ac3cf45742931256f2941a0a0
->>>>>>> Esencia
 TextureImporter:
   fileIDToRecycleName:
     21300000: fruits_0
@@ -58,11 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 150
-=======
-  spritePixelsToUnits: 100
->>>>>>> Esencia
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,31 +100,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
-=======
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
->>>>>>> Esencia
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -151,11 +118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 8bdf06d723b591a44a37d133eb161e33
-=======
-      spriteID: 91539064e1069244b843c0b135ebb6ee
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -175,11 +138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 4755cae3029d798428d19ad1d0f24a9e
-=======
-      spriteID: 94ffbbc024d3c3145bc11213936da899
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -199,11 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 2d516e39157018b4c8393046cf7a10de
-=======
-      spriteID: a01de53285258694cb6c071252c38442
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -223,11 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 94722863c5bca0e43a6ede87a0c1bcc7
-=======
-      spriteID: 54aa70cfc70035e4d88b1429aa78a619
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -247,11 +198,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 9064cbee7a3cf7145b3754a3d04f4bde
-=======
-      spriteID: 817fee1994bf04c458b09dc5a0253713
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -271,11 +218,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 49b3c72ac5f06e9408800213bdaf8557
-=======
-      spriteID: 13f994402d26ecf4dbb84774227859bc
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -295,11 +238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: f68b626b361bc904a9d1612e5377061b
-=======
-      spriteID: f3a89f3af80e29449a9c141dcd37a42b
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -319,11 +258,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: cd10184ca1c0ff74aa7602c5c53e167d
-=======
-      spriteID: b2fd495c26598454d9a8e185747e10a8
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -343,11 +278,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
       spriteID: 6471ae358463a284ea46c59071494e8c
-=======
-      spriteID: 4debc00e245f60041a2508ca9f9b4323
->>>>>>> Esencia
       vertices: []
       indices: 
       edges: []
@@ -355,11 +286,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
     spriteID: d4e1dc2bd4d05774d834166b986a6421
-=======
-    spriteID: 99b7ebeefee134e4bb7995c6c626d035
->>>>>>> Esencia
     vertices: []
     indices: 
     edges: []
