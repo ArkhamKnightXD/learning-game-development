@@ -17,13 +17,18 @@ public class PlayerController : MonoBehaviour
 
     float _speedX = 10f;
 
-    float _speedY = 25f;
-
     Vector3 _deltaPosition;
+
+    Vector3 _characterScale;
     
     GameController gameController;
 
     Vector3 _heightPosition;
+
+    bool _canJump;
+
+
+    float horizontalAxis;
 
     private void Awake()
     {
@@ -36,21 +41,39 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     
     void Update()
     {
+
          // Aqui basicamente consigo la distancia a la que se debe mover mi objeto
         _deltaPosition = new Vector3(Input.GetAxis("Horizontal"),0) * _speedX * Time.deltaTime;
 
-        // translate es como un += para la posicion.
+
         gameObject.transform.Translate(_deltaPosition);
 
         gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x, X_MIN_LIMIT, X_MAX_LIMIT),gameObject.transform.position.y,  gameObject.transform.position.z);
 
 
+//Para poder rotar el personaje
+        _characterScale = transform.localScale;
+
+       if (Input.GetAxis("Horizontal") < 0)
+        {
+            _characterScale.x = -1;
+        }
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            _characterScale.x = 1;
+        }
+
+        //tiene error en esta linea de codigo
+        transform.localScale =_characterScale;
+
+        
 
         // Aqui obtenemos la ultima posicion del horizontal axis y se la mandamos a animator
         if (_lastHorizontalAxis != Input.GetAxis("Horizontal"))
@@ -63,11 +86,6 @@ public class PlayerController : MonoBehaviour
         
 
 
-        _heightPosition = new Vector3(0,Input.GetAxis("Vertical")) * _speedY * Time.deltaTime;
-
-        // translate es como un += para la posicion.
-        gameObject.transform.Translate(_heightPosition);
-
 
         if (_lastVerticalAxis != Input.GetAxis("Vertical"))
         {
@@ -76,7 +94,42 @@ public class PlayerController : MonoBehaviour
             _animator.SetFloat("VerticalAxis", _lastVerticalAxis);            
         }
 
+        ManageJump();
+
+
     }
 
+
+     // Funcion para hacer saltar al personaje 
+
+    void ManageJump()
+     {
+
+
+        if (gameObject.transform.position.y > -2.62f) {
+
+            _canJump = true;
+        }
+
+
+        if (Input.GetKey("up") && _canJump && gameObject.transform.position.y < 0)
+        {
+
+            gameObject.transform.Translate(0, 6 * Time.deltaTime, 0);
+
+        }
+
+        else {
+
+            _canJump = false;
+
+
+            if (gameObject.transform.position.y > 0) {
+
+                gameObject.transform.Translate(0, 6 * Time.deltaTime, 0);
+            }
+
+        }
+    }
 
 }
