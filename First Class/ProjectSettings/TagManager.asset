@@ -23,8 +23,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Terrain
+  - Tree
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trees
+    uniqueID: 141603635
     locked: 0
