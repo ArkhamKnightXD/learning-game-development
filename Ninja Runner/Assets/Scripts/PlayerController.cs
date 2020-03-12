@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("up") && _canJump && gameObject.transform.position.y < 5)
         {
 
-            gameObject.transform.Translate(0, 6 * Time.deltaTime, 0);
+            gameObject.transform.Translate(0, 7 * Time.deltaTime, 0);
 
         }
 

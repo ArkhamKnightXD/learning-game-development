@@ -29,8 +29,8 @@ public class GameController : MonoBehaviour
 
         //definiendo los valores iniciales del score y de las vidas
         CurrentScore = 0;
-        CurrentLives = 3;
-        CurrentTime = 250;
+        CurrentLives = 1;
+        CurrentTime = 240;
 
 
         // Buscando los distintos objetos por su nombre para poder utilizarlos ene sta clase

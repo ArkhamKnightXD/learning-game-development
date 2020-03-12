@@ -10,24 +10,24 @@ public class WebServiceClient : MonoBehaviour
     [Serializable]
     public class NinjaRunnerScore
     {
-        public int id;
-        public string playerName;
-        public float score;
+        public int Id;
+        public string PlayerName;
+        public float Score;
     }
 
     UnityWebRequest www;
 
-    const string webServiceURL = "localhost:8888/request";
-
+    //const string webServiceURL = "localhost:8888/request";
+    const string webServiceURL = "https://localhost:44345/api/values";
     
    public IEnumerator SendWebRequest(float score)
     {
        
        NinjaRunnerScore newScore = new NinjaRunnerScore();
 
-       newScore.id = 20;
-       newScore.playerName = "Karvin";
-       newScore.score = score;
+       newScore.Id = 20;
+       newScore.PlayerName = "Joha";
+       newScore.Score = score;
 
        www = UnityWebRequest.Put(webServiceURL, JsonUtility.ToJson(newScore));
        www.SetRequestHeader("Content-Type", "application/json");
