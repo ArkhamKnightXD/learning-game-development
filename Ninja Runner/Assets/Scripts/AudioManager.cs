@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource GameOver;
 
+    public AudioSource Win;
+
     private void Awake()
     {
         Instance = this;
@@ -27,6 +29,7 @@ public class AudioManager : MonoBehaviour
         DamageTaken,
         FruitGet,
         PlayerJump,
+        Win,
         GameOver
     }
 
@@ -48,6 +51,11 @@ public class AudioManager : MonoBehaviour
 
         case SoundEffect.PlayerJump:
             PlayerJump.Play();
+            break;
+
+        case SoundEffect.Win:
+            GameSong.Stop();
+            Win.Play();
             break;
 
         case SoundEffect.GameOver:
