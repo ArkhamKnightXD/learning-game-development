@@ -18,7 +18,7 @@ public class PowerUpController : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other){
+    private void OnTriggerEnter2D(Collider2D other){
 
 
        if (other.gameObject.tag.ToString().Contains("Player"))
@@ -26,9 +26,11 @@ public class PowerUpController : MonoBehaviour
 
             Destroy(gameObject);
 
-            gameController.IncrementScore();
+           // gameController.IncrementScore();
 
             AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.FruitGet);   
+
+//            other.gameObject.tag.
        }
 
         

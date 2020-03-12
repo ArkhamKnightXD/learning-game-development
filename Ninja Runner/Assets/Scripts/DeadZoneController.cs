@@ -15,12 +15,12 @@ public class DeadZoneController : MonoBehaviour
 
 // cuando usamos box collider y activamos la opcion istrigger debemos de usamos esta funcion para 
 //que cuando haya collision suceda lo  que se realiza en esta funcion.
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         
         //Destroy, destruye un objeto, osea lo desaparece del juego
         Destroy(other.gameObject);
-        gameController.DecrementLives();
+        gameController.GameOverByFall();
 
         AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameOver);
     }

@@ -18,7 +18,6 @@ public class GameController : MonoBehaviour
 
     public GameObject WinText;
 
-    //cod example  _playerEsenciaController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerEsenciaController>();
 
     void Start()
     {
@@ -26,7 +25,7 @@ public class GameController : MonoBehaviour
 
         //definiendo los valores iniciales del score y de las vidas
         CurrentScore = 0;
-        CurrentLives = 1;
+        CurrentLives = 3;
 
 
         // Buscando los distintos objetos por su nombre para poder utilizarlos ene sta clase
@@ -45,7 +44,7 @@ public class GameController : MonoBehaviour
 
     public int IncrementScore(){
 
-        CurrentScore++;
+        CurrentScore += 50;
 
         ScoreText.text = CurrentScore.ToString();
 
@@ -73,9 +72,28 @@ public class GameController : MonoBehaviour
             RetryText.SetActive(true);
 
             AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameOver);
+            
         }
 
         return CurrentLives;
+    }
+
+
+    public int GameOverByFall()
+    {
+        CurrentLives = 0;
+        LivesText.text = $"Lives: {CurrentLives}"; 
+
+        StartCoroutine("SendScore");
+
+        GameOverText.SetActive(true);
+
+        RetryText.SetActive(true);
+
+        AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameOver);
+
+        return CurrentLives;
+
     }
 
     // funcion encargada de mandar el score a webservice client, no toma parametros esta funcion

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     const float X_MIN_LIMIT = -8.45f;
 
-    const float X_MAX_LIMIT = 10.22f;
+    const float X_MAX_LIMIT = 1000f;
 
     float _lastHorizontalAxis;
 
@@ -106,13 +106,13 @@ public class PlayerController : MonoBehaviour
      {
 
 
-        if (gameObject.transform.position.y > -2.62f) {
+        if (gameObject.transform.position.y < 3) {
 
             _canJump = true;
         }
 
 
-        if (Input.GetKey("up") && _canJump && gameObject.transform.position.y < 0)
+        if (Input.GetKey("up") && _canJump && gameObject.transform.position.y < 3)
         {
 
             gameObject.transform.Translate(0, 6 * Time.deltaTime, 0);
@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
             _canJump = false;
 
 
-            if (gameObject.transform.position.y > 0) {
+            if (gameObject.transform.position.y > 5) {
 
                 gameObject.transform.Translate(0, 6 * Time.deltaTime, 0);
             }
