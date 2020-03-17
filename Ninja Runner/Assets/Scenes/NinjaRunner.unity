@@ -12510,7 +12510,7 @@ TextMesh:
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 2
   m_TabSize: 4
   m_FontSize: 500
   m_FontStyle: 0
@@ -12564,7 +12564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447014922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.84, y: 4.89, z: -0.085105464}
+  m_LocalPosition: {x: 6.33, y: 4.89, z: -0.085105464}
   m_LocalScale: {x: 0.02, y: 0.02, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -16293,8 +16293,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962287548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 94.35, y: 0.619, z: 1}
-  m_LocalScale: {x: 217.69548, y: 20.147, z: 1}
+  m_LocalPosition: {x: 94.35, y: 2.428, z: 1}
+  m_LocalScale: {x: 217.69548, y: 23.773458, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
