@@ -5,6 +5,6 @@
   <properties>
    <property name="name" value="J"/>
   </properties>
-  <image width="128" height="192" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/tree.png"/>
+  <image width="128" height="192" source="../First Class/Assets/Sprites/Tiles/tree.png"/>
  </tile>
 </tileset>

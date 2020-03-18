@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="Grass.tsx"/>
  <tileset firstgid="3" source="Roads.tsx"/>
  <tileset firstgid="10" source="Trees.tsx"/>
- <layer id="1" name="Tile Layer 1" width="25" height="25">
+ <layer id="1" name="Tile Layer 1" width="25" height="25" offsetx="4369.02" offsety="260.006">
   <data encoding="csv">
 2,2,1,2,1,1,2,7,2,2,2,2,1,2,2,7,1,1,1,1,1,1,1,2,2,
 2,10,10,10,10,2,1,9,1,1,2,1,10,1,1,9,1,1,2,1,1,1,2,2,1,

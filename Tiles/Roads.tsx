@@ -5,42 +5,42 @@
   <properties>
    <property name="name" value="C"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_cross.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_cross.png"/>
  </tile>
  <tile id="1">
   <properties>
    <property name="name" value="D"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_end_hor1.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_end_hor1.png"/>
  </tile>
  <tile id="2">
   <properties>
    <property name="name" value="E"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_end_hor2_left.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_end_hor2_left.png"/>
  </tile>
  <tile id="3">
   <properties>
    <property name="name" value="F"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_end_ver1_down.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_end_ver1_down.png"/>
  </tile>
  <tile id="4">
   <properties>
    <property name="name" value="G"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_end_ver1.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_end_ver1.png"/>
  </tile>
  <tile id="5">
   <properties>
    <property name="name" value="H"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_middle_hor.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_middle_hor.png"/>
  </tile>
  <tile id="6">
   <properties>
    <property name="name" value="I"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/road_middle_ver1.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/road_middle_ver1.png"/>
  </tile>
 </tileset>

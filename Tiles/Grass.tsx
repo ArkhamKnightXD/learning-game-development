@@ -5,12 +5,12 @@
   <properties>
    <property name="name" value="A"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/grass_flowers1.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/grass_flowers1.png"/>
  </tile>
  <tile id="1">
   <properties>
    <property name="name" value="B"/>
   </properties>
-  <image width="128" height="128" source="../projects/learning-game-development/First Class/Assets/Sprites/Tiles/grass.png"/>
+  <image width="128" height="128" source="../First Class/Assets/Sprites/Tiles/grass.png"/>
  </tile>
 </tileset>
