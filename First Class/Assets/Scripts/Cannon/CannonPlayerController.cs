@@ -40,7 +40,7 @@ public class CannonPlayerController : MonoBehaviour
     {
         _deltaPosition = new Vector3();
 
-        _trayectory.positionCount = _trayectoryVertices;
+//        _trayectory.positionCount = _trayectoryVertices;
     }
     
 
@@ -102,10 +102,10 @@ public class CannonPlayerController : MonoBehaviour
         }
 
 
-        for (int i = 0; i < _trayectoryVertices; i++)
+      /*  for (int i = 0; i < _trayectoryVertices; i++)
         {
             _trayectory.SetPosition(i, GetPosition((float)i / _trayectoryVertices, Mathf.Pow(_triggerSpeed,2) *Mathf.Sin(_triggerAngle * 2) /Mathf.Abs(Physics.gravity.y)));
-        }
+        }*/
 
     }
 

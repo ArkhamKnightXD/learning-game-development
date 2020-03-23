@@ -1375,7 +1375,7 @@ GameObject:
   - component: {fileID: 1243697010}
   - component: {fileID: 1243697008}
   m_Layer: 0
-  m_Name: BackgroundImage
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1410,7 +1410,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0c1425340dad3a1d88fee532854978ba, type: 2}
+  - {fileID: 2100000, guid: 6d95c977661545d429f893de3f956054, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1446,8 +1446,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243697007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.028, y: -0, z: 1}
-  m_LocalScale: {x: 18.54359, y: 10.654701, z: 1}
+  m_LocalPosition: {x: -0.01, y: 0.013, z: 1}
+  m_LocalScale: {x: 18.174498, y: 10.379469, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1

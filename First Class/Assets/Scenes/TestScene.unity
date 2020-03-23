@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 471991581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ffbbd5ec2a22d41815786cfe26dd36, type: 3}
+  m_Script: {fileID: 11500000, guid: f1da583da34feb94a9aaeb854ee14cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &879028187
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 879028187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1b28d67ec74ec468817f9b87847859, type: 3}
+  m_Script: {fileID: 11500000, guid: 1aea9f69e14542946a7274b3100edf05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1034473602
@@ -1163,7 +1163,7 @@ GameObject:
   - component: {fileID: 1034473604}
   - component: {fileID: 1034473603}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,7 +1200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89ba9e4353b690523be6d810f4feab66, type: 2}
+  - {fileID: 2100000, guid: e7cc6a44f8ee6ad4e89ca0f63bbc62cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

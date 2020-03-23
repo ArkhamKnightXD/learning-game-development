@@ -5,25 +5,40 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
+
     public AudioSource BallExplosion;
 
     public AudioSource BallCapture;
+
+    public AudioSource Song;
+
+    public AudioSource GameOver;
+
 
     private void Awake()
     {
         Instance = this;
     }
+
     
     public enum SoundEffect
     {
         Explode,
-        Capture
+        Capture,
+        Song,
+        GameOver
     }
+    
 
     public void PlaySoundEffect(SoundEffect type)
     {
         switch (type)
         {
+
+        case SoundEffect.Song:
+            Song.Play();
+            break;
+
         case SoundEffect.Capture:
             BallCapture.Play();
             break;
@@ -31,6 +46,11 @@ public class AudioManager : MonoBehaviour
         case SoundEffect.Explode:
             BallExplosion.Play();
             break;
+
+        case SoundEffect.GameOver:
+            Song.Stop();
+            GameOver.Play();
+            break;    
             
         }
     }
