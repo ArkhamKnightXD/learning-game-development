@@ -39,12 +39,9 @@ public class WebServiceEsenciaClient : MonoBehaviour
 
     const string webServiceURLEsence = "localhost:8888/esence/request";
 
-    const string webServiceURLEsence2 = "localhost:8888/esence/scores";
 
-    
     public IEnumerator SendWebRequest()
     {
-       
        Esence newScore = new Esence();
 
        newScore.id = 0;
@@ -71,15 +68,5 @@ public class WebServiceEsenciaClient : MonoBehaviour
        yield return www1.SendWebRequest();
 
        Debug.Log(www1.downloadHandler.text);
-    }
-
-
-    public IEnumerator GetTopScore()
-    {
-        www1 = UnityWebRequest.Get(webServiceURLEsence2);
-
-        www1.SetRequestHeader("Content-Type", "application/json");
-
-        yield return www1.SendWebRequest(); 
     }
 }

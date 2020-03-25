@@ -14,6 +14,8 @@ public class MapManager : MonoBehaviour
 
     GameObject currentPrefab = null;
 
+    Transform cellsContainer, charactersContainer;
+
     XmlNode currentNode;
 
     XmlNodeList nodeList;
@@ -25,6 +27,13 @@ public class MapManager : MonoBehaviour
         xmlDocument.LoadXml(Resources.Load<TextAsset>("Level1").text);
         
         LoadMap();
+    }
+
+
+    private void Awake()
+    {
+        cellsContainer = GameObject.Find("Cells").transform;
+        charactersContainer = GameObject.Find("Characters").transform;
     }
 
 
@@ -82,12 +91,15 @@ public class MapManager : MonoBehaviour
                         break;                        
                 }
 
-                Instantiate(currentPrefab,new Vector3(j, -i,0), Quaternion.identity);
+               currentPrefab = Instantiate(currentPrefab,new Vector3(j, -i,0), Quaternion.identity);
+
+               currentPrefab.transform.SetParent(cellsContainer);
             }
         }
 
         LoadCharacters();
     }
+
 
     void LoadCharacters()
     {
@@ -115,6 +127,14 @@ public class MapManager : MonoBehaviour
             newElement = Instantiate(currentPrefab, new Vector3(Convert.ToSingle(currentElement.Attributes["posX"].Value), -Convert.ToSingle(currentElement.Attributes["posY"].Value)),Quaternion.identity);
 
             newElement.name =  currentElement.Attributes["UniqueObjectName"].Value;
+
+            newElement.transform.SetParent(charactersContainer);
+
+            if (newElement.tag == "Player")
+            {   
+                Camera.main.transform.SetParent(newElement.transform);
+                Camera.main.transform.localPosition = new Vector3(0,0,-10);
+            }
         }
     }
 }

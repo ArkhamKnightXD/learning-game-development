@@ -16,6 +16,7 @@ public class ScrollController : MonoBehaviour
         _renderer = GetComponent<MeshRenderer>();
     }
 
+
     void Update()
     {
         _currentPosition += _scrollingSpeed *Time.deltaTime;

@@ -12,6 +12,8 @@ public class AudioManagerEsencia : MonoBehaviour
 
     public AudioSource Song;
 
+    public AudioSource GameOver;
+
 
     private void Awake()
     {
@@ -23,7 +25,8 @@ public class AudioManagerEsencia : MonoBehaviour
     {
         Explosion,
         Capture,
-        Song
+        Song,
+        GameOver
     }
 
 
@@ -41,6 +44,11 @@ public class AudioManagerEsencia : MonoBehaviour
 
         case SoundEffect.Explosion:
             EnemyExplosion.Play();
+            break;
+
+        case SoundEffect.GameOver:
+            Song.Stop();
+            GameOver.Play();
             break;            
         }
     }

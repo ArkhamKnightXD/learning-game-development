@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
  public enum EssenceType 
     {
         Blue = 0,
@@ -11,6 +12,7 @@ using UnityEngine;
         Red,
         Yellow
     }
+
 
 public class EsenciaInstatiator : MonoBehaviour
 {
@@ -46,8 +48,8 @@ public class EsenciaInstatiator : MonoBehaviour
             {EssenceType.Pink, PinkEssence},
             {EssenceType.Purple, PurpleEssence},
         };
-
     }
+
 
     void Update()
     {
@@ -73,6 +75,5 @@ public class EsenciaInstatiator : MonoBehaviour
         {
             Instantiate(Enemy, new Vector3(10,Random.Range(-4, 5)), Quaternion.identity);
         }
-
     }
 }

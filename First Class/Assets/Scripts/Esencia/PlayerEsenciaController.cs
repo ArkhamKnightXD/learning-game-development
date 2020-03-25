@@ -26,6 +26,8 @@ public class PlayerEsenciaController : MonoBehaviour
 
     public GameObject gameOverText;
 
+    public GameObject retryText;
+
         
     private void Awake()
     {
@@ -35,15 +37,23 @@ public class PlayerEsenciaController : MonoBehaviour
 
         gameOverText = GameObject.Find("GameOverText");
 
+        retryText = GameObject.Find("RetryText");
+
         gameOverText.SetActive(false);
+
+        retryText.SetActive(false);
 
         webServiceEsenciaClient = GameObject.Find("GlobalScriptsText").GetComponent<WebServiceEsenciaClient>();
     }
 
+
     private void Start()
     {
+        AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.Song);
+
         PlayerLivesText.text = _lives.ToString();
     }
+
 
     void Update()
     {
@@ -65,6 +75,7 @@ public class PlayerEsenciaController : MonoBehaviour
         }
 
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -97,17 +108,36 @@ public class PlayerEsenciaController : MonoBehaviour
             case "Enemy":
             _lives--;
             PlayerLivesText.text = _lives.ToString();
+
             if (_lives ==0)
             {
                 isGameOver = true;
                 gameOverText.SetActive(true);
-                webServiceEsenciaClient.SaveScore();
+                retryText.SetActive(true);
+                AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.GameOver);
+
+                // Este if me sirve para que no se guarde el score mas de una vez
+                if (isGameOver)
+                {
+                    webServiceEsenciaClient.SaveScore();
+                }
+                
             }
             break;
      
-            
         }
-        AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.Capture);
-        Destroy(other.gameObject);
+        
+
+        if (other.gameObject.tag == "Enemy")
+        {
+            AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.Explosion);
+            Destroy(other.gameObject);    
+        }
+        else
+        {
+            AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.Capture);
+            Destroy(other.gameObject);
+        }
+        
     }
 }
