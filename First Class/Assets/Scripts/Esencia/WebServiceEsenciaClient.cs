@@ -7,7 +7,7 @@ using System;
 public class WebServiceEsenciaClient : MonoBehaviour
 {
     [Serializable]
-    public class Esence
+    public class EsenceScore
     {
         public int id;
         public string playerName;
@@ -42,7 +42,7 @@ public class WebServiceEsenciaClient : MonoBehaviour
 
     public IEnumerator SendWebRequest()
     {
-       Esence newScore = new Esence();
+       EsenceScore newScore = new EsenceScore();
 
        newScore.id = 0;
 
