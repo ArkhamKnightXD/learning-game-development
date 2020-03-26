@@ -7,9 +7,13 @@ using System;
 public class MapManager : MonoBehaviour
 {
     public GameObject Grass1;
+
     public GameObject Grass2;
 
     public GameObject RoadCross, RoadEndHorizontal, RoadEndHorizontal2Left, RoadEndVertical2, RoadEndVertical2Down, RoadMiddleHorizontal, RoadMiddleVertical1, Tree;
+
+    public GameObject PlayerPrefab, MorahPrefab, LionelPrefab, EnemyPrefab;
+
     XmlDocument xmlDocument;
 
     GameObject currentPrefab = null;
@@ -39,10 +43,9 @@ public class MapManager : MonoBehaviour
 
     void LoadMap()
     {
-
-        GameObject currentPrefab = null;
-
         // loading the map
+
+        currentPrefab = null;
 
         nodeList = xmlDocument.SelectNodes("//level/map/row");
 
@@ -91,7 +94,7 @@ public class MapManager : MonoBehaviour
                         break;                        
                 }
 
-               currentPrefab = Instantiate(currentPrefab,new Vector3(j, -i,0), Quaternion.identity);
+               currentPrefab = Instantiate(currentPrefab,new Vector3(j, -i), Quaternion.identity);
 
                currentPrefab.transform.SetParent(cellsContainer);
             }
@@ -104,36 +107,36 @@ public class MapManager : MonoBehaviour
     void LoadCharacters()
     {
         GameObject newElement;
-
-        GameObject currentPrefab = null;
-
+        currentPrefab = null;
         nodeList = xmlDocument.SelectNodes("//level/characters/character");
-
-        foreach (XmlNode currentElement in nodeList)
+        foreach( XmlNode currentElement in nodeList)
         {
-            switch (currentElement.Attributes["prefabName"].Value)
+            switch (currentElement.Attributes ["prefabName"].Value)
             {
                 case "Player":
-                    currentPrefab = Tree;
+                    currentPrefab = PlayerPrefab;
                     break;
-
                 case "Morah":
+                    currentPrefab = MorahPrefab;
                     break;
-
                 case "Lionel":
+                    currentPrefab = LionelPrefab;
+                    break;
+                default:
+                    currentPrefab = EnemyPrefab;
                     break;
             }
+            newElement = Instantiate (currentPrefab, new Vector3(Convert.ToSingle(currentElement.Attributes["posX"].Value),-Convert.ToSingle(currentElement.Attributes["posY"].Value)),Quaternion.identity);
 
-            newElement = Instantiate(currentPrefab, new Vector3(Convert.ToSingle(currentElement.Attributes["posX"].Value), -Convert.ToSingle(currentElement.Attributes["posY"].Value)),Quaternion.identity);
-
-            newElement.name =  currentElement.Attributes["UniqueObjectName"].Value;
+            newElement.name = currentElement.Attributes["uniqueObjectName"].Value;
 
             newElement.transform.SetParent(charactersContainer);
 
             if (newElement.tag == "Player")
-            {   
+            {    
                 Camera.main.transform.SetParent(newElement.transform);
-                Camera.main.transform.localPosition = new Vector3(0,0,-10);
+
+                Camera.main.transform.localPosition = new Vector3(0,0,Camera.main.transform.localPosition.z);
             }
         }
     }
