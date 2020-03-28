@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1396772738153115374}
   - component: {fileID: 7928759143180782860}
   - component: {fileID: 3432724621049856095}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lionel
   m_TagString: NPC
   m_Icon: {fileID: 0}
