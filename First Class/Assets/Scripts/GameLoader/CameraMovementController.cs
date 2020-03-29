@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CameraMovementController : MonoBehaviour
 {
-    const float UPPERLIMIT = 2.25f, LOWERRLIMIT = -2.25f;
+    const float UPPERLIMIT = 0.10f, LOWERRLIMIT = -0.10f;
     GameObject _player;
 
     Vector3 _newPosition;
+
+    
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -19,7 +21,7 @@ public class CameraMovementController : MonoBehaviour
         _newPosition = gameObject.transform.position;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         _newPosition.y = Mathf.Clamp(_player.transform.position.y, LOWERRLIMIT,UPPERLIMIT);

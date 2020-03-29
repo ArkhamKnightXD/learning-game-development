@@ -7,6 +7,8 @@ public class GameLoaderController : MonoBehaviour
 {
 
     string _sceneName;
+
+    
     //Esta funcion se ejecuta mientras se este colissionando
     public void OnTriggerStay(Collider other)
     {
@@ -19,11 +21,11 @@ public class GameLoaderController : MonoBehaviour
                     break;
 
                 case "Game2Loader":
-                _sceneName = "Esencia";
+                _sceneName = "EsenciaScene";
                     break;
 
                 case "Game3Loader":
-                _sceneName = "Cannon";
+                _sceneName = "CannonScene";
                     break;
 
                 case "Game4Loader":

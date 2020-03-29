@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 896
+  controlID: 113
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 897
+  controlID: 73
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 224}
   m_MaxSize: {x: 8004, y: 4024}
   vertical: 0
-  controlID: 898
+  controlID: 54
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,9 +296,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.75163716, y: -1.911962, z: -0.25200066}
+    m_Target: {x: -0.44193232, y: -1.0720838, z: 0.052160848}
     speed: 2
-    m_Value: {x: -0.75163716, y: -1.911962, z: -0.25200066}
+    m_Value: {x: -0.44193232, y: -1.0720838, z: 0.052160848}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -330,9 +330,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 17.537313
+    m_Target: 13.116537
     speed: 2
-    m_Value: 17.537313
+    m_Value: 13.116537
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -502,10 +502,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 9fb6875d2edac73479d4eb6b6a846da1,
+  m_AnimatorController: {fileID: 9100000, guid: 524bd4a49b5abfa49aed9a25ef90f621,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1107004896716539128, guid: 9fb6875d2edac73479d4eb6b6a846da1,
+  - m_Target: {fileID: 1107173520529523704, guid: 524bd4a49b5abfa49aed9a25ef90f621,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -584,20 +584,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Scripts/GameLoader
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Scripts/GameLoader
   m_LastFoldersGridSize: 58
   m_LastProjectPath: C:\Unity Projects\learning-game-development\First Class
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: be390000
-    m_LastClickedID: 14782
-    m_ExpandedIDs: 00000000d8260000f42b0000e62c00004c31000032320000f4330000d63400006635000068350000aa3600001a370000323700006237000066390000983b00009a3b00009c3b000000ca9a3b
+    scrollPos: {x: 0, y: 318}
+    m_SelectedIDs: 8a390000
+    m_LastClickedID: 14730
+    m_ExpandedIDs: 00000000d8260000f42b0000e62c0000362e00004c31000032320000f4330000d63400006635000068350000aa3600001a370000323700005837000062370000663900002e3b0000303b0000323b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -625,7 +625,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d8260000f42b0000e62c00004c31000032320000f4330000d63400006635000068350000aa3600001a370000323700006237000066390000983b00009a3b00009c3b000000ca9a3b
+    m_ExpandedIDs: 00000000d8260000f42b0000e62c0000362e00004c31000032320000f4330000d63400006635000068350000aa3600001a370000323700005837000062370000663900002e3b0000303b0000323b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -650,8 +650,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: c02e0000
-    m_LastClickedInstanceID: 11968
+    m_SelectedInstanceIDs: 4a240000
+    m_LastClickedInstanceID: 9290
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300004c27000062270000a827000088260000a82600001e41000066490000
     m_RenameOverlay:
@@ -725,8 +725,8 @@ MonoBehaviour:
     y: 0
     width: 552
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
