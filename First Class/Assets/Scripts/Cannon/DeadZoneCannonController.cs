@@ -13,12 +13,10 @@ public class DeadZoneCannonController : MonoBehaviour
     }
 
 
-
     void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
-       // gameController.DecrementLives();
 
-        AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.Explode);
+        AudioManagerCannon.Instance.PlaySoundEffect(AudioManagerCannon.SoundEffect.Explode);
     }
 }

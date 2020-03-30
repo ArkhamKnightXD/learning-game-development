@@ -20,7 +20,9 @@ public class GameCannonController : MonoBehaviour
 
     public GameObject WinText;
 
-   // public GameObject BallPrefab;
+    public GameObject GoBackText;
+
+   // public GameObject MeteorPrefab;
    
     
     void Start()
@@ -40,6 +42,8 @@ public class GameCannonController : MonoBehaviour
 
         WinText = GameObject.Find("WinText");
 
+        GoBackText = GameObject.Find("GoBackText");
+
         // esto quiere decir que la funcion de instanciar bola se repetira muchas veces, y esperara 0 segundos 
         // y nos llamara la funcion por primera vez y luego espera 1.5 segundos entre cada llamada de funcion
         //subsecuente
@@ -50,12 +54,14 @@ public class GameCannonController : MonoBehaviour
         RetryText.SetActive(false);
 
         WinText.SetActive(false);
+
+        GoBackText.SetActive(false);
     }
 
 
     // Esta funcion lo que hara sera crear bolas que esta en el ballprefab de forma aleatoria en los minimos y
     // los maximos ya especificados anteriormente
-  /* void InstantiateBall()
+  /* void InstantiateMeteor()
     {
 
        if (CurrentLives <= 0)
@@ -73,6 +79,16 @@ public class GameCannonController : MonoBehaviour
 
         ScoreText.text = CurrentScore.ToString();
 
+        if (CurrentScore == 20)
+       {
+           StartCoroutine("SendScore");
+           WinText.SetActive(true);
+           RetryText.SetActive(true);
+           GoBackText.SetActive(true);
+
+           AudioManagerCannon.Instance.PlaySoundEffect(AudioManagerCannon.SoundEffect.Win);
+       }
+
         return CurrentScore;
     }
 
@@ -87,6 +103,7 @@ public class GameCannonController : MonoBehaviour
            StartCoroutine("SendScore");
            GameOverText.SetActive(true);
            RetryText.SetActive(true);
+           GoBackText.SetActive(true);
 
            AudioManagerCannon.Instance.PlaySoundEffect(AudioManagerCannon.SoundEffect.GameOver);
        }

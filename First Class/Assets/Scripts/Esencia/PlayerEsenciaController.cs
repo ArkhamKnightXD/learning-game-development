@@ -24,9 +24,13 @@ public class PlayerEsenciaController : MonoBehaviour
 
     public TextMesh PlayerLivesText;
 
-    public GameObject gameOverText;
+    public GameObject GameOverText;
 
-    public GameObject retryText;
+    public GameObject RetryText;
+
+    public GameObject WinText;
+
+    public GameObject GoBackText;
 
         
     private void Awake()
@@ -35,13 +39,21 @@ public class PlayerEsenciaController : MonoBehaviour
 
         scoreController = GameObject.Find("GlobalScriptsText").GetComponent<ScoreController>();
 
-        gameOverText = GameObject.Find("GameOverText");
+        GameOverText = GameObject.Find("GameOverText");
 
-        retryText = GameObject.Find("RetryText");
+        RetryText = GameObject.Find("RetryText");
 
-        gameOverText.SetActive(false);
+        WinText = GameObject.Find("WinText");
 
-        retryText.SetActive(false);
+        GoBackText = GameObject.Find("GoBackText");
+
+        GameOverText.SetActive(false);
+
+        RetryText.SetActive(false);
+
+        WinText.SetActive(false);
+
+        GoBackText.SetActive(false);
 
         webServiceEsenciaClient = GameObject.Find("GlobalScriptsText").GetComponent<WebServiceEsenciaClient>();
     }
@@ -109,11 +121,15 @@ public class PlayerEsenciaController : MonoBehaviour
             _lives--;
             PlayerLivesText.text = _lives.ToString();
 
-            if (_lives ==0)
+            if (_lives == 0)
             {
                 isGameOver = true;
-                gameOverText.SetActive(true);
-                retryText.SetActive(true);
+                GameOverText.SetActive(true);
+                RetryText.SetActive(true);
+
+                //WinText.SetActive(false);
+                GoBackText.SetActive(true);
+                
                 AudioManagerEsencia.Instance.PlaySoundEffect(AudioManagerEsencia.SoundEffect.GameOver);
 
                 // Este if me sirve para que no se guarde el score mas de una vez

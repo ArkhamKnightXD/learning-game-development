@@ -86,7 +86,7 @@ public class CannonPlayerController : MonoBehaviour
 
         //Este primer if se encarga de aumentar la barra de carga mientras el usuario tenga
         //presionado el boton Fire1 y de irle agregando potencia al tiro mediante pingpong 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire2"))
         {
             _barValue = Mathf.PingPong(Time.time,1) *100f;
 
@@ -96,7 +96,7 @@ public class CannonPlayerController : MonoBehaviour
 
         // El siguiente if es para cuando el usuario suerte el boton de Fire1 que es el click izquierdo
         // cuando lo suelte instanciara la bala de canion
-        else if (Input.GetButtonUp("Fire1"))
+        else if (Input.GetButtonUp("Fire2"))
         {
             Instantiate(CannonBallPrefab, gameObject.transform.position, Quaternion.identity).GetComponent<CannonBallBehaviour>().Shoot(_triggerSpeed * (_barValue/100), _triggerAngle);
         }

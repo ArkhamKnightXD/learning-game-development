@@ -14,11 +14,16 @@ public class GameController : MonoBehaviour
     public int CurrentLives;
 
     public TextMesh ScoreText;
+
     public TextMesh LivesText;
 
     public GameObject GameOverText;
 
     public GameObject RetryText;
+
+    public GameObject WinText;
+
+    public GameObject GoBackText;
 
     public GameObject BallPrefab;
    
@@ -38,6 +43,10 @@ public class GameController : MonoBehaviour
 
         RetryText = GameObject.Find("RetryText");
 
+        WinText = GameObject.Find("WinText");
+
+        GoBackText = GameObject.Find("GoBackText");
+
         // esto quiere decir que la funcion de instanciar bola se repetira muchas veces, y esperara 0 segundos 
         // y nos llamara la funcion por primera vez y luego espera 1.5 segundos entre cada llamada de funcion
         //subsecuente
@@ -46,6 +55,10 @@ public class GameController : MonoBehaviour
         GameOverText.SetActive(false);
 
         RetryText.SetActive(false);
+
+        WinText.SetActive(false);
+
+        GoBackText.SetActive(false);
     }
 
 
@@ -57,7 +70,12 @@ public class GameController : MonoBehaviour
        if (CurrentLives <= 0)
         {
             return;
-        }      
+        }
+
+        if (CurrentScore > 9)
+        {
+            return;
+        }            
 
         Instantiate(BallPrefab, new Vector3(Random.Range(MINX, MAXX),6,0), Quaternion.identity);
     }
@@ -68,6 +86,16 @@ public class GameController : MonoBehaviour
         CurrentScore++;
 
         ScoreText.text = CurrentScore.ToString();
+
+        if (CurrentScore == 10)
+       {
+           StartCoroutine("SendScore");
+           RetryText.SetActive(true);
+           GoBackText.SetActive(true);
+           WinText.SetActive(true);
+
+           AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.Win);
+       }
 
         return CurrentScore;
     }
@@ -83,6 +111,9 @@ public class GameController : MonoBehaviour
            StartCoroutine("SendScore");
            GameOverText.SetActive(true);
            RetryText.SetActive(true);
+           GoBackText.SetActive(true);
+
+           //WinText.SetActive(false);
 
            AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameOver);
        }
