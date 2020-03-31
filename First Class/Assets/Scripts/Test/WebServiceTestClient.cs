@@ -8,7 +8,7 @@ public class WebServiceTestClient : MonoBehaviour
 {
 
     [Serializable]
-    public class GravilotaScore
+    public class TestScore
     {
         public int id;
         public string playerName;
@@ -23,9 +23,9 @@ public class WebServiceTestClient : MonoBehaviour
    public IEnumerator SendWebRequest(float score)
     {
        
-       GravilotaScore newScore = new GravilotaScore();
+       TestScore newScore = new TestScore();
 
-       newScore.id = 20;
+       newScore.id = 1;
        newScore.playerName = "Karvin";
        newScore.score = score;
 

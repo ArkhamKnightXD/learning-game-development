@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameCannonController : MonoBehaviour
 {
     const float MINX = -8.20f;
+    
     const float MAXX= 8.20f; 
     
     public int CurrentScore;
@@ -12,6 +13,7 @@ public class GameCannonController : MonoBehaviour
     public int CurrentLives;
 
     public TextMesh ScoreText;
+
     public TextMesh LivesText;
 
     public GameObject GameOverText;
@@ -22,7 +24,7 @@ public class GameCannonController : MonoBehaviour
 
     public GameObject GoBackText;
 
-   // public GameObject MeteorPrefab;
+    public GameObject MeteorPrefab;
    
     
     void Start()
@@ -44,11 +46,6 @@ public class GameCannonController : MonoBehaviour
 
         GoBackText = GameObject.Find("GoBackText");
 
-        // esto quiere decir que la funcion de instanciar bola se repetira muchas veces, y esperara 0 segundos 
-        // y nos llamara la funcion por primera vez y luego espera 1.5 segundos entre cada llamada de funcion
-        //subsecuente
-       // InvokeRepeating("InstantiateBall", 0, 1.5f);
-
         GameOverText.SetActive(false);
 
         RetryText.SetActive(false);
@@ -56,21 +53,26 @@ public class GameCannonController : MonoBehaviour
         WinText.SetActive(false);
 
         GoBackText.SetActive(false);
+
+        InvokeRepeating("InstantiateMeteor", 0, 1.5f);
     }
 
-
-    // Esta funcion lo que hara sera crear bolas que esta en el ballprefab de forma aleatoria en los minimos y
-    // los maximos ya especificados anteriormente
-  /* void InstantiateMeteor()
+    
+    void InstantiateMeteor()
     {
 
-       if (CurrentLives <= 0)
+        if (CurrentLives <= 0)
         {
             return;
-        }      
+        }
 
-        Instantiate(BallPrefab, new Vector3(Random.Range(MINX, MAXX),6,0), Quaternion.identity);
-    }*/
+        if (CurrentScore > 9)
+        {
+            return;
+        }            
+
+        Instantiate(MeteorPrefab, new Vector3(Random.Range(MINX, MAXX),6,0), Quaternion.identity);
+    }
 
 
     public int IncrementScore(){
@@ -79,7 +81,7 @@ public class GameCannonController : MonoBehaviour
 
         ScoreText.text = CurrentScore.ToString();
 
-        if (CurrentScore == 20)
+        if (CurrentScore == 10)
        {
            StartCoroutine("SendScore");
            WinText.SetActive(true);

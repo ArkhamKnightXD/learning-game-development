@@ -15,8 +15,14 @@ public class DeadZoneCannonController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Enemy")
+        {
+            gameController.DecrementLives();
+
+            AudioManagerCannon.Instance.PlaySoundEffect(AudioManagerCannon.SoundEffect.Explode);
+        }
+
         Destroy(other.gameObject);
 
-        AudioManagerCannon.Instance.PlaySoundEffect(AudioManagerCannon.SoundEffect.Explode);
     }
 }

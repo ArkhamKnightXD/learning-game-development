@@ -15,6 +15,7 @@ TagManager:
   - RedCube
   - Enemy
   - NPC
+  - Bullet
   layers:
   - Default
   - TransparentFX

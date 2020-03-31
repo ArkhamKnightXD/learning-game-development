@@ -513,7 +513,6 @@ GameObject:
   - component: {fileID: 299099487}
   - component: {fileID: 299099486}
   - component: {fileID: 299099485}
-  - component: {fileID: 299099484}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -521,20 +520,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &299099484
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299099483}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &299099485
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -703,7 +688,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c3aa89d7853175c40be72d751b27d05e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -799,7 +784,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4e845604cdc23ae4f93292f83be4edf2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -895,7 +880,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5d72ce448c8d06343a2b1221de8c403e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -991,7 +976,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 52d8e6d8047758947925410c6bf7f471, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1104,7 +1089,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 93cf947c6df19a84ba7ec1a2ed5264ec, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1556,7 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab78c07d3210012459c7bdc22174aa8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CannonBallPrefab: {fileID: 6591714269388387731, guid: 3a4fe12269f6af8b2b6f081a74056cdd,
+  CannonBallPrefab: {fileID: 8680318728717631026, guid: 3a4fe12269f6af8b2b6f081a74056cdd,
     type: 3}
   ProgressBar: {fileID: 1577784274}
 --- !u!1 &1300890032
@@ -1849,7 +1834,9 @@ MonoBehaviour:
   GameOverText: {fileID: 206945117}
   RetryText: {fileID: 265362612}
   WinText: {fileID: 1639395122}
-  GoBackText: {fileID: 0}
+  GoBackText: {fileID: 1803829196}
+  MeteorPrefab: {fileID: 5220938243099457245, guid: 02088b092a87c5f44b015c4dd5a9f943,
+    type: 3}
 --- !u!114 &1710166617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2097,7 +2084,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839641982}
-  m_Text: 'Lives: 0'
+  m_Text: 'Lives: 3'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

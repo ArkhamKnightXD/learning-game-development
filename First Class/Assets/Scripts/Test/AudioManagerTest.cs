@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManagerTest : MonoBehaviour
 {
     public static AudioManagerTest Instance;
+
     public AudioSource CubePoint;
 
     public AudioSource CubeDamage;
@@ -15,6 +16,8 @@ public class AudioManagerTest : MonoBehaviour
 
     public AudioSource GameOver;
 
+    public AudioSource Win;
+
     private void Awake()
     {
         Instance = this;
@@ -23,13 +26,16 @@ public class AudioManagerTest : MonoBehaviour
     public enum SoundEffect
     {
         Point,
+
         Damage,
 
         Song,
 
         GameOver,
 
-        ExtraLive
+        ExtraLive,
+
+        Win
     }
 
     public void PlaySoundEffect(SoundEffect type)
@@ -56,7 +62,11 @@ public class AudioManagerTest : MonoBehaviour
             Song.Stop();
             GameOver.Play();
             break;
-            
+        
+        case SoundEffect.Win:
+            Song.Stop();
+            Win.Play();
+            break;
         }
     }
 }

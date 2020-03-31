@@ -29,7 +29,7 @@ public class GameLoaderController : MonoBehaviour
                     break;
 
                 case "Game4Loader":
-                _sceneName = "ExplorationLevel";
+                _sceneName = "TestScene";
                     break;
             
             }

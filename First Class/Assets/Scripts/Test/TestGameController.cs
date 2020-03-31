@@ -12,11 +12,16 @@ public class TestGameController : MonoBehaviour
     public int CurrentLives;
 
     public TextMesh ScoreText;
+
     public TextMesh LivesText;
 
     public GameObject GameOverText;
 
     public GameObject RetryText;
+
+    public GameObject WinText;
+
+    public GameObject GoBackText;
 
     public GameObject BlueCube;
 
@@ -37,7 +42,7 @@ public class TestGameController : MonoBehaviour
         AudioManagerTest.Instance.PlaySoundEffect(AudioManagerTest.SoundEffect.Song);
         CurrentScore = 0;
 
-        CurrentLives = 5;
+        CurrentLives = 3;
 
         LivesText = GameObject.Find("LivesText").GetComponent<TextMesh>();
 
@@ -45,9 +50,17 @@ public class TestGameController : MonoBehaviour
 
         RetryText = GameObject.Find("RetryText");
 
+        WinText = GameObject.Find("WinText");
+
+        GoBackText = GameObject.Find("GoBackText");
+
         RetryText.SetActive(false);
 
         GameOverText.SetActive(false);
+
+        WinText.SetActive(false);
+
+        GoBackText.SetActive(false);
         
 
         InvokeRepeating("InstantiateBlueCube", 0, 2.0f);
@@ -64,12 +77,17 @@ public class TestGameController : MonoBehaviour
 
        if (CurrentLives <= 0)
         {
-            GameOverText.SetActive(true);
+            return;
+        }
+
+
+        if (CurrentScore >= 25)
+        {
             return;
         }      
 
 
-        BlueCubePosition = new Vector3(Random.Range(MINX, MAXX),6,0);
+        BlueCubePosition = new Vector3(Random.Range(MINX, MAXX),6.2f,0);
 
         Instantiate(BlueCube, BlueCubePosition, Quaternion.identity);
         
@@ -81,12 +99,16 @@ public class TestGameController : MonoBehaviour
 
        if (CurrentLives <= 0)
         {
-            GameOverText.SetActive(true);
+            return;
+        }
+
+        if (CurrentScore >= 25)
+        {
             return;
         }      
 
 
-        GreenCubePosition = new Vector3(Random.Range(MINX, MAXX),6,0);
+        GreenCubePosition = new Vector3(Random.Range(MINX, MAXX),7,0);
      
         Instantiate(GreenCube, GreenCubePosition, Quaternion.identity);
         
@@ -98,12 +120,16 @@ public class TestGameController : MonoBehaviour
 
        if (CurrentLives <= 0)
         {
-            GameOverText.SetActive(true);
+            return;
+        }
+
+        if (CurrentScore >= 25)
+        {
             return;
         }      
 
 
-        RedCubePosition = new Vector3(Random.Range(MINX, MAXX),6,0);
+        RedCubePosition = new Vector3(Random.Range(MINX, MAXX),8,0);
      
         Instantiate(RedCube, RedCubePosition, Quaternion.identity);
         
@@ -116,6 +142,20 @@ public class TestGameController : MonoBehaviour
         CurrentScore++;
 
         ScoreText.text = CurrentScore.ToString();
+
+        if (CurrentScore >= 25)
+        {
+            
+            StartCoroutine("SendScore");
+
+            WinText.SetActive(true);
+
+            RetryText.SetActive(true);
+
+            GoBackText.SetActive(true);
+
+            AudioManagerTest.Instance.PlaySoundEffect(AudioManagerTest.SoundEffect.Win);
+        }
 
         return CurrentScore;
     }
@@ -154,6 +194,7 @@ public class TestGameController : MonoBehaviour
            StartCoroutine("SendScore");
            GameOverText.SetActive(true);
            RetryText.SetActive(true);
+           GoBackText.SetActive(true);
            AudioManagerTest.Instance.PlaySoundEffect(AudioManagerTest.SoundEffect.GameOver);
        }
 
