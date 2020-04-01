@@ -16,8 +16,6 @@ public class CannonPlayerController : MonoBehaviour
 
     float _barValue;
 
-    int _trayectoryVertices = 20;
-
     Vector3 _deltaPosition;
 
     Vector3 _mousePosition;

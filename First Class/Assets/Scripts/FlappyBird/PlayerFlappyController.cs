@@ -13,10 +13,6 @@ public class PlayerFlappyController : MonoBehaviour
 
     float _lastVerticalAxis;
 
-   // Animator _animator;
-
-    float _speedX = 10f;
-
     Vector3 _currentSpeed;
 
     Vector3 _deltaPosition;
@@ -29,17 +25,11 @@ public class PlayerFlappyController : MonoBehaviour
    
     private void Awake()
     {
-       // _animator = GetComponent<Animator>();
-
         gameController = GameObject.Find("GlobalScriptsText").GetComponent<GameFlappyController>();
 
-
     }
 
-    void Start()
-    {
 
-    }
 
     
     void Update()
