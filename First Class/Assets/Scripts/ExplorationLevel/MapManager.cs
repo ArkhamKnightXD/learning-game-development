@@ -6,6 +6,9 @@ using System;
 
 public class MapManager : MonoBehaviour
 {
+
+    public String CurrentLevel;
+
     public GameObject Grass1;
 
     public GameObject Grass2;
@@ -13,6 +16,9 @@ public class MapManager : MonoBehaviour
     public GameObject RoadCross, RoadEndHorizontal, RoadEndHorizontal2Left, RoadEndVertical2, RoadEndVertical2Down, RoadMiddleHorizontal, RoadMiddleVertical1, Tree;
 
     public GameObject PlayerPrefab, MorahPrefab, LionelPrefab, EnemyPrefab;
+
+
+    public GameObject PlatGrass1;
 
     XmlDocument xmlDocument;
 

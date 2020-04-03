@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Scripts.Menu.Entities;
 
 public class MenuItemsController : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class MenuItemsController : MonoBehaviour
 
     public void OnMouseEnter()
     {
+        MenuAudioManager.Instance.PlaySoundEffect(MenuAudioManager.SoundEffect.Hover);
+
         transform.localScale *= _HOVERSCALEFACTOR;
     }
 
@@ -28,11 +31,12 @@ public class MenuItemsController : MonoBehaviour
     //funciona parecido a onmousedown
     public void OnMouseUp()
     {
-       /* if (_menuController.isActiveAndEnabled())
+        MenuAudioManager.Instance.PlaySoundEffect(MenuAudioManager.SoundEffect.Click);
+
+        if (_menuController.isCanvasActive())
             return;
-        {
             
-        }*/
+        
 
         switch (gameObject.name)
         {
@@ -40,12 +44,13 @@ public class MenuItemsController : MonoBehaviour
             SceneManager.LoadScene("GameLoader");
             break;
 
-            case "Option":
+            case "Options":
             _menuController.ShowGameOptions();
             break;
 
             case "Exit":
-            SceneManager.LoadScene("GameLoader");
+            // esto cerrara la aplicacion o scena que se esta ejecutando
+            Application.Quit();
             break;
 
         }
@@ -61,12 +66,32 @@ public class MenuItemsController : MonoBehaviour
 
     public void CancelDialog()
     {
+
+        Game.CurrentGame.LoadCurrentState();
         _menuController.HideGameOptions();
     }
 
 
-    public void OnplayerNameChanged(InputField input)
+    public void OnPlayerNameChanged(InputField input)
     {
-        //GameMenuController.CurrentGame.PlayerName = Input
+        Game.CurrentGame.PlayerName = input.text;
+    }
+
+
+    public void OnMusicVolumeChanged(Slider slider)
+    {
+        Game.CurrentGame.MusicVolume = slider.value;
+    }
+
+
+    public void OnFXMusicChanged(Slider slider) 
+    {
+        Game.CurrentGame.EffectsVolume = slider.value;
+    }
+
+
+    public void OnDifficultyChanged(Dropdown drop)
+    {
+        Game.CurrentGame.Difficulty = (Game.eDifficulty)drop.value;
     }
 }
