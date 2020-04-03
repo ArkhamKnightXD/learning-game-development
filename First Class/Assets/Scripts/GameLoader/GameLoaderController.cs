@@ -31,6 +31,14 @@ public class GameLoaderController : MonoBehaviour
                 case "Game4Loader":
                 _sceneName = "TestScene";
                     break;
+
+                case "GameStoreLoader":
+                _sceneName = "StoreScene";
+                    break;
+
+                case "GameExitLoader":
+                _sceneName = "ExplorationLevel";
+                    break;
             
             }
             SceneManager.LoadScene(_sceneName);
