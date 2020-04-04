@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.3" orientation="orthogonal" renderorder="right-down" width="900" height="50" tilewidth="128" tileheight="128" infinite="0" nextlayerid="22" nextobjectid="1">
+ <tileset firstgid="1" source="Space.tsx"/>
+ <tileset firstgid="28" source="SpaceObjects.tsx"/>
+ <objectgroup id="15" name="Capa de Objetos 6"/>
+ <layer id="21" name="Scene" width="900" height="50">
+  <data encoding="base64" compression="zlib">
+   eJzt3VtuwjAQBVBaAm13wf5XWfERCSIQ8duxz/kZiaJRSlw0Fyf0dAIAAGBGS2d9AAAAKEt+AwAAAAAAAFbn1gcAAAAAAAAAAAAAwJRcxwoAAAAAAABs2UcEAAAAAAAAAAAAAAAAgHDuzwMAAAAAAAAAAAAA9nDtMQAAjMu8D0ANy84KAMSR7QDoTWjOkwvJzZoCKE8WBeBR6gxuhieWtQPAnYwKAOOT/wAAoA+5Z3OzPlvWBABwBLn3qD/1sycOjEj+AwByk52gnr3zvLmfO+sAANLJOwAcgfwHQGh2kXVgP38vtGZ/kEfOMwAAwBzkP4AyfOYPpHj3HhL6eO5eAAD0zSwHALxiRgDol/fo17wuAKyWyAoAQF2y/FjOmSr9kqXGd2l9AAAAQLTZM9olsgIAAO38Zupzy9QHencr0PNaoCcAAFDH7Pte9gcBAOB4Uvcl3I/ILEqudfkYAAAAAACoZb1/MPb/BeSuX5sa+7g6Vv10nveug+3zcn0/r+/5BQAAAIC5HeUzvqMcJ3AsP4n1O7F+6k8froF1e55Dfx76vHcVAAAAAACAZ3+dV/rQeh1YPwBAaa7JBQAAAAAAaGekvZqRfpcavF4AAAAAAAAAAABADNcgAgAAAAAAAAAAANS3dNYHAACAstb89g9IzgXb
+  </data>
+ </layer>
+</map>
