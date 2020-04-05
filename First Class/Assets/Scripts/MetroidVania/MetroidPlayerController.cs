@@ -10,7 +10,6 @@ public class MetroidPlayerController : MonoBehaviour
     Animator _animator;
     SpriteRenderer _renderer;
     Vector3 _newPosition = new Vector3();
-    bool _isEnemy;
     GameObject _player;
 
    

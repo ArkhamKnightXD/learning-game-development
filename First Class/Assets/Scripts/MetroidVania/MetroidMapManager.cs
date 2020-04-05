@@ -29,7 +29,7 @@ public class MetroidMapManager : MonoBehaviour
     {
         xmlDocument = new XmlDocument();
 
-        xmlDocument.LoadXml(Resources.Load<TextAsset>("FinalTest").text);
+        xmlDocument.LoadXml(Resources.Load<TextAsset>("FinalVersion2").text);
         
         LoadMap();
     }
@@ -210,7 +210,7 @@ public class MetroidMapManager : MonoBehaviour
 
                     case ' ':
                     continue;
-                        
+ 
                                             
                 }
 
