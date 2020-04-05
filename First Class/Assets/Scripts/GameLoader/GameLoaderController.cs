@@ -37,7 +37,7 @@ public class GameLoaderController : MonoBehaviour
                     break;
 
                 case "GameExitLoader":
-                _sceneName = "ExplorationLevel";
+                _sceneName = "MetroidVania";
                     break;
             
             }

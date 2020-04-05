@@ -8,6 +8,16 @@ public class AudioManagerMetroid : MonoBehaviour
 
     public AudioSource Song;
 
+    public AudioSource Jump;
+
+    public AudioSource Damage;
+
+    public AudioSource Attack;
+
+    public AudioSource Shoot;
+
+    public AudioSource Item;
+
     public AudioSource GameOver;
 
     public AudioSource Win;
@@ -21,7 +31,19 @@ public class AudioManagerMetroid : MonoBehaviour
     public enum SoundEffect
     {
         Song,
+
+        Jump,
+
+        Damage,
+
+        Attack,
+
+        Shoot,
+
+        Item,
+
         GameOver,
+        
         Win
     }
     
@@ -33,6 +55,26 @@ public class AudioManagerMetroid : MonoBehaviour
 
         case SoundEffect.Song:
             Song.Play();
+            break;
+            
+        case SoundEffect.Jump:
+            Jump.Play();
+            break;
+
+        case SoundEffect.Damage:
+            Damage.Play();
+            break;
+
+        case SoundEffect.Attack:
+            Attack.Play();
+            break;
+
+        case SoundEffect.Shoot:
+            Shoot.Play();
+            break;
+
+        case SoundEffect.Item:
+            Item.Play();
             break;
 
         case SoundEffect.GameOver:

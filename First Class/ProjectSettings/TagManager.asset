@@ -16,6 +16,9 @@ TagManager:
   - Enemy
   - NPC
   - Bullet
+  - PlayerSlider
+  - PlayerAttack
+  - PlayerHighJump
   layers:
   - Default
   - TransparentFX

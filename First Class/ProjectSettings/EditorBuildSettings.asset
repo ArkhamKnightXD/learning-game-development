@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StoreScene.unity
     guid: 1b0708d75d0b3cb4b9d5a9e91cfd3954
+  - enabled: 1
+    path: Assets/Scenes/MetroidVania.unity
+    guid: 7ab4e8c7aab0a8d428f5be39ed64897d
   m_configObjects: {}
