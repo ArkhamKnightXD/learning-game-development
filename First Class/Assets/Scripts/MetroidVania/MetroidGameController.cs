@@ -26,7 +26,7 @@ public class MetroidGameController : MonoBehaviour
 
         CurrentScore = 0;
 
-        CurrentLives = 3;
+        CurrentLives = 100;
 
         LivesText = GameObject.Find("LivesText").GetComponent<TextMesh>();
 
@@ -67,7 +67,7 @@ public class MetroidGameController : MonoBehaviour
     public int DecrementLives()
     {
        CurrentLives = CurrentLives > 0 ? CurrentLives - 1 : 0;
-       LivesText.text = $"Lives: {CurrentLives}"; 
+       LivesText.text = $"{CurrentLives}"; 
 
        if (CurrentLives == 0)
        {

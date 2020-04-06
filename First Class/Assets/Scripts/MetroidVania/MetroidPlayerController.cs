@@ -6,6 +6,8 @@ public class MetroidPlayerController : MonoBehaviour
 {
     
     Vector3 _movementSpeed = new Vector3(8, 8), _runningSpeed= new Vector3(15, 15);
+
+   // Vector3 initialPosition = new Vector3();
     Rigidbody _rigidbody;
     Animator _animator;
     SpriteRenderer _renderer;
@@ -20,17 +22,18 @@ public class MetroidPlayerController : MonoBehaviour
 
     bool jumping = false;
 
-
     float jumpTime;
     
     float maxJumpingTime = 1.5f;
+
+    float maxJumpingHighTime = 2f;
 
    
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+
         _renderer = GetComponent<SpriteRenderer>();
-       // Physics.IgnoreLayerCollision(8, 10);
         
         _player = GameObject.FindGameObjectWithTag("Player");
 
@@ -46,9 +49,12 @@ public class MetroidPlayerController : MonoBehaviour
     void Update()
     {
 
-        Jump();
-
+        if (_player.gameObject.tag != "PlayerHighJump" )
+        {
+            Jump();    
+        }
         
+
         _newPosition.x = Input.GetAxis("Horizontal") * (Input.GetButton("Fire2") ? _runningSpeed.x : _movementSpeed.x);
 
         _renderer.flipX=_newPosition.x < 0;
@@ -69,7 +75,7 @@ public class MetroidPlayerController : MonoBehaviour
         }
         
 
-        if (_player.gameObject.tag == "PlayerAttack")
+        if (_player.gameObject.tag == "PlayerHighJump")
         {
             Slide();
             HighJump();    
@@ -116,7 +122,28 @@ public class MetroidPlayerController : MonoBehaviour
 
     private void HighJump()
     {
-        
+        if (Input.GetButton("Jump") && !jumping)
+        {
+            jumpTime = 0f;
+
+            _rigidbody.AddForce(transform.up * 470f);
+            _animator.SetBool("Jump", true);
+
+            jumping = true;
+        }
+
+        if (jumping)
+        {
+            jumpTime += Time.deltaTime;
+
+            if (jumpTime > maxJumpingHighTime)
+            {
+                jumping = false;
+
+                _animator.SetBool("Jump", false);
+
+            }   
+        }
     }
 
 

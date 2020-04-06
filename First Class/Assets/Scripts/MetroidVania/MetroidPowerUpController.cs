@@ -15,15 +15,39 @@ public class MetroidPowerUpController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "PlayerSlider" || other.gameObject.tag == "PlayerAttack" || other.gameObject.tag == "PlayerHighJump")
+        if (other.gameObject.tag == "Player" && gameObject.tag == "SliderPowerUp")
         {
             gameController.IncrementScore();
 
             Destroy(gameObject);
 
-            other.gameObject.tag = "PlayerSlider";
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+
+            other.gameObject.tag = "PlayerSlider";    
+        }
+
+
+        if (other.gameObject.tag == "PlayerSlider" && gameObject.tag == "HighJumpPowerUp")
+        {
+            gameController.IncrementScore();
+
+            Destroy(gameObject);
 
             AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+
+            other.gameObject.tag = "PlayerHighJump";    
+        }
+
+
+        if (other.gameObject.tag == "PlayerHighJump" && gameObject.tag == "AntiAcidPowerUp")
+        {
+            gameController.IncrementScore();
+
+            Destroy(gameObject);
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+
+            other.gameObject.tag = "PlayerAntiAcid";    
         }
 
     }

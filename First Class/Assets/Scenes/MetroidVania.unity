@@ -217,20 +217,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fdcf13d688e5246981a96d8e47a304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Acid1: {fileID: 8009038155421143398, guid: d2f1fe003d63a3c4e95aa40b0590aec4, type: 3}
-  Acid2: {fileID: 1564356131110194819, guid: 150b9860a9df03745bad75e31d24a720, type: 3}
-  BgTile1: {fileID: 8126619607945035820, guid: 0d32ff53218f5954a841cda5a308f621, type: 3}
+  Acid1: {fileID: 64533323343631036, guid: d2f1fe003d63a3c4e95aa40b0590aec4, type: 3}
+  Acid2: {fileID: 6173138113611298362, guid: 150b9860a9df03745bad75e31d24a720, type: 3}
+  BgTile1: {fileID: 2535684031636411515, guid: 0d32ff53218f5954a841cda5a308f621, type: 3}
   BgTile2: {fileID: 5052167695663132082, guid: 2d6336167c424284f9f92b12f3499055, type: 3}
   BgTile3: {fileID: 4306850723647525520, guid: 3c888d4b7d0c8544ebc04fea4d653a58, type: 3}
   BgTile4: {fileID: 8065064369589026220, guid: 1c92c9a2102365a4d817353f726632da, type: 3}
   BgTile5: {fileID: 7485296006945555973, guid: 7921f9ac75c56b2428516640d5633a8f, type: 3}
   BgTile6: {fileID: 6391367339678437421, guid: 7382d11b8802ea547a4834b124517e2b, type: 3}
-  BgTile7: {fileID: 2930849519998812515, guid: a19b3e197d74fa1409490ee9c3ba2912, type: 3}
+  BgTile7: {fileID: 8098395921833533258, guid: a19b3e197d74fa1409490ee9c3ba2912, type: 3}
   BgTile8: {fileID: 0}
   Fence1: {fileID: 0}
   Fence2: {fileID: 0}
   Fence3: {fileID: 0}
-  Spike: {fileID: 759770572371786956, guid: a7293d0875eb83345af28b5eba34b4bd, type: 3}
+  Spike: {fileID: 5242477049545203894, guid: a7293d0875eb83345af28b5eba34b4bd, type: 3}
   Tile1: {fileID: 0}
   Tile2: {fileID: 4102058942203887259, guid: 7a004cc74a3b7eb4ea8d98dc75204f99, type: 3}
   Tile3: {fileID: 0}
@@ -247,16 +247,16 @@ MonoBehaviour:
   Tile14: {fileID: 6527249803470513163, guid: 41b4e3bc5b31e534488f0e57b7f98e9e, type: 3}
   Tile15: {fileID: 0}
   Barrel1: {fileID: 0}
-  Barrel2: {fileID: 0}
+  Barrel2: {fileID: 6935194203002629135, guid: 9ae7fed865ce1e947aac6b5ac678bde9, type: 3}
   Box: {fileID: 0}
   DoorLocked: {fileID: 0}
   DoorOpen: {fileID: 0}
   DoorUnlocked: {fileID: 260303710838107751, guid: 45a9a8fc1e1a8e24fb05683b7e52b762,
     type: 3}
   Saw: {fileID: 0}
-  Switch1: {fileID: 280901252170074348, guid: e4a29bd7b2f9bd84892c409285d30bf9, type: 3}
+  Switch1: {fileID: 6608962788484052710, guid: e4a29bd7b2f9bd84892c409285d30bf9, type: 3}
   Switch2: {fileID: 6649527043225169546, guid: 0f9bffa530fd34940aed8121b45c0421, type: 3}
-  Jelly3: {fileID: 0}
+  Jelly3: {fileID: 1950348777719036323, guid: 64e43422f95668b40819bbb363e67c9d, type: 3}
 --- !u!114 &396266532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 739940449}
   m_Layer: 0
   m_Name: Background
-  m_TagString: Untagged
+  m_TagString: PlayerAntiAcid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1922,6 +1922,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 305262114805575450, guid: 34d800eea8e718349a101f9885ce40fb,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 397180929
+      objectReference: {fileID: 0}
+    - target: {fileID: 305262114805575450, guid: 34d800eea8e718349a101f9885ce40fb,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 305262114805575452, guid: 34d800eea8e718349a101f9885ce40fb,
         type: 3}
       propertyPath: m_Size.x
@@ -1945,6 +1955,21 @@ PrefabInstance:
     - target: {fileID: 305262114805575453, guid: 34d800eea8e718349a101f9885ce40fb,
         type: 3}
       propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305262114805575453, guid: 34d800eea8e718349a101f9885ce40fb,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 305262114805575453, guid: 34d800eea8e718349a101f9885ce40fb,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 305262114805575453, guid: 34d800eea8e718349a101f9885ce40fb,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 305262114805575455, guid: 34d800eea8e718349a101f9885ce40fb,

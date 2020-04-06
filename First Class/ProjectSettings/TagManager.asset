@@ -19,6 +19,13 @@ TagManager:
   - PlayerSlider
   - PlayerAttack
   - PlayerHighJump
+  - PlayerAntiAcid
+  - SliderPowerUp
+  - HighJumpPowerUp
+  - AntiAcidPowerUp
+  - AttackPowerUp
+  - Acid
+  - Spike
   layers:
   - Default
   - TransparentFX
@@ -31,7 +38,7 @@ TagManager:
   - Terrain
   - Tree
   - Character
-  - 
+  - BackGround
   - 
   - 
   - 
@@ -61,4 +68,10 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 397180929
+    locked: 0
+  - name: BackGround
+    uniqueID: 3765551475
+    locked: 0
+  - name: ForeGround
+    uniqueID: 553721233
     locked: 0

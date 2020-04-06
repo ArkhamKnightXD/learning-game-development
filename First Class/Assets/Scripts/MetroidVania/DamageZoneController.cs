@@ -12,14 +12,24 @@ public class DamageZoneController : MonoBehaviour
         gameController = GameObject.Find("GlobalScriptsText").GetComponent<MetroidGameController>();
     }
 
+
+    // Cambiar esto por ontringerstay y ver que otros cambios mas hacer
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag != "PlayerAntiAcid")
         {
-            //gameController.DecrementLives();
+            gameController.DecrementLives();
 
-            AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.Explode);      
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Damage);      
         } 
         
+
+        if (gameObject.name == "Spike")
+        {
+            gameController.DecrementLives();
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Damage);
+        }
+
     }
 }
