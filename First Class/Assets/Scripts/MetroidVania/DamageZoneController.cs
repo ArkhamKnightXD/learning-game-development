@@ -13,10 +13,10 @@ public class DamageZoneController : MonoBehaviour
     }
 
 
-    // Cambiar esto por ontringerstay y ver que otros cambios mas hacer
-    void OnTriggerEnter(Collider other)
+    
+    void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag != "PlayerAntiAcid")
+        if (other.gameObject.tag != "PlayerAntiAcid" && other.gameObject.tag != "PlayerExplosion" && gameObject.tag == "Acid")
         {
             gameController.DecrementLives();
 
@@ -24,12 +24,22 @@ public class DamageZoneController : MonoBehaviour
         } 
         
 
-        if (gameObject.name == "Spike")
+        if (gameObject.tag == "Spike")
         {
             gameController.DecrementLives();
 
             AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Damage);
         }
 
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerAntiAcid" && gameObject.tag == "FakeFloor")
+        {
+            Destroy(gameObject);
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);      
+        }
     }
 }

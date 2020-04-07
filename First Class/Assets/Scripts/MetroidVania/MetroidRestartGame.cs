@@ -7,6 +7,6 @@ public class MetroidRestartGame : MonoBehaviour
 {
     void OnMouseDown()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MetroidVania");
     }
 }

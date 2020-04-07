@@ -177,7 +177,7 @@ public class MetroidMapManager : MonoBehaviour
                         break;
 
                     case '#':
-                    currentPrefab = Fence1;
+                    currentPrefab = Box;
                         break;
 
                     case '$':

@@ -26,6 +26,10 @@ TagManager:
   - AttackPowerUp
   - Acid
   - Spike
+  - FakeFloor
+  - Explosion
+  - PlayerExplosion
+  - FinalJelly
   layers:
   - Default
   - TransparentFX

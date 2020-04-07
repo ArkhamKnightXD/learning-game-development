@@ -12,11 +12,19 @@ public class MetroidGameController : MonoBehaviour
 
     public TextMesh LivesText;
 
+    public TextMesh TimerText;
+
     public GameObject GameOverText;
 
     public GameObject RetryText;
 
     public GameObject WinText;
+
+    public float CurrentTime;
+
+    GameObject _player;
+
+    int count = 0;
 
 
     void Start()
@@ -26,7 +34,9 @@ public class MetroidGameController : MonoBehaviour
 
         CurrentScore = 0;
 
-        CurrentLives = 100;
+        CurrentLives = 500;
+
+        CurrentTime = 60;
 
         LivesText = GameObject.Find("LivesText").GetComponent<TextMesh>();
 
@@ -36,6 +46,9 @@ public class MetroidGameController : MonoBehaviour
 
         WinText = GameObject.Find("WinText");
 
+        TimerText = GameObject.Find("TimerText").GetComponent<TextMesh>();
+
+        _player = GameObject.FindGameObjectWithTag("Player");
 
         GameOverText.SetActive(false);
 
@@ -43,22 +56,55 @@ public class MetroidGameController : MonoBehaviour
 
         WinText.SetActive(false);
 
+        //TimerText.transform.
     }
+
+
+    void Update()
+    {
+       if (_player.gameObject.tag == "PlayerExplosion")
+       {
+            DecrementTime();   
+       }
+        
+
+        if (_player.gameObject.tag == "Finish")
+       {
+            Win();   
+       }
+    }
+
+
+    public float DecrementTime()
+    {
+        
+        CurrentTime = CurrentTime > 0 ? CurrentTime - 1 * Time.deltaTime : 0;
+        
+        TimerText.text = CurrentTime.ToString("0");
+
+        if (CurrentTime == 0)
+        {
+
+          //  StartCoroutine("SendScore");
+
+            GameOverText.SetActive(true);
+
+            RetryText.SetActive(true);
+
+           // AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameOver);
+            
+        }
+       
+
+        return CurrentTime;
+    }
+
 
     public int IncrementScore(){
 
         CurrentScore++;
 
         ScoreText.text = CurrentScore.ToString();
-
-        if (CurrentScore == 10)
-       {
-           StartCoroutine("SendScore");
-           RetryText.SetActive(true);
-           WinText.SetActive(true);
-
-           AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.Win);
-       }
 
         return CurrentScore;
     }
@@ -68,9 +114,11 @@ public class MetroidGameController : MonoBehaviour
     {
        CurrentLives = CurrentLives > 0 ? CurrentLives - 1 : 0;
        LivesText.text = $"{CurrentLives}"; 
+    
 
-       if (CurrentLives == 0)
+       if (CurrentLives == 0 && count == 0)
        {
+           count++;
            StartCoroutine("SendScore");
            GameOverText.SetActive(true);
            RetryText.SetActive(true);
@@ -82,8 +130,22 @@ public class MetroidGameController : MonoBehaviour
     }
 
 
+    public void Win()
+    {
+       if (count == 0)
+       {
+           count++;
+           StartCoroutine("SendScore");
+           WinText.SetActive(true);
+           RetryText.SetActive(true);
+
+           AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Win);
+       }
+    }
+
+
     IEnumerator SendScore()
     {
-        yield return gameObject.GetComponent<WebServiceClient>().SendWebRequest(CurrentScore);
+        yield return gameObject.GetComponent<MetroidWebServiceClient>().SendWebRequest(CurrentScore);
     }
 }

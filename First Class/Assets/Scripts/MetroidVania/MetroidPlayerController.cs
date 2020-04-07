@@ -7,7 +7,6 @@ public class MetroidPlayerController : MonoBehaviour
     
     Vector3 _movementSpeed = new Vector3(8, 8), _runningSpeed= new Vector3(15, 15);
 
-   // Vector3 initialPosition = new Vector3();
     Rigidbody _rigidbody;
     Animator _animator;
     SpriteRenderer _renderer;
@@ -49,7 +48,7 @@ public class MetroidPlayerController : MonoBehaviour
     void Update()
     {
 
-        if (_player.gameObject.tag != "PlayerHighJump" )
+        if (_player.gameObject.tag == "Player" || _player.gameObject.tag == "PlayerSlider")
         {
             Jump();    
         }
@@ -59,14 +58,10 @@ public class MetroidPlayerController : MonoBehaviour
 
         _renderer.flipX=_newPosition.x < 0;
 
-        //_newPosition.y = Input.GetAxis("Vertical")* (Input.GetButton("Fire3") ? _runningSpeed.y : _movementSpeed.y);
 
         _animator.SetFloat("Speed",_newPosition.magnitude);
        
          _rigidbody.MovePosition(transform.position + _newPosition* Time.deltaTime);
-
-
-         
 
 
         if (_player.gameObject.tag == "PlayerSlider")
@@ -75,7 +70,7 @@ public class MetroidPlayerController : MonoBehaviour
         }
         
 
-        if (_player.gameObject.tag == "PlayerHighJump")
+        if (_player.gameObject.tag == "PlayerHighJump" || _player.gameObject.tag == "PlayerAntiAcid")
         {
             Slide();
             HighJump();    
@@ -85,6 +80,17 @@ public class MetroidPlayerController : MonoBehaviour
         if (_player.gameObject.tag == "PlayerAttack")
         {
             Slide();
+
+            HighJump();
+
+            _animator.SetBool("Attack", Input.GetButton("Fire1"));    
+        }
+
+        if (_player.gameObject.tag == "PlayerExplosion")
+        {
+            Slide();
+
+            HighJump();
 
             _animator.SetBool("Attack", Input.GetButton("Fire1"));    
         }

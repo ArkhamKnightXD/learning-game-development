@@ -50,5 +50,28 @@ public class MetroidPowerUpController : MonoBehaviour
             other.gameObject.tag = "PlayerAntiAcid";    
         }
 
+
+        if (other.gameObject.tag == "PlayerAntiAcid" && gameObject.tag == "Explosion")
+        {
+            gameController.IncrementScore();
+
+            Destroy(gameObject);
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+
+            other.gameObject.tag = "PlayerExplosion";    
+        }
+
+        if (other.gameObject.tag == "PlayerExplosion" && gameObject.tag == "FinalJelly")
+        {
+            gameController.IncrementScore();
+
+            Destroy(gameObject);
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+
+            other.gameObject.tag = "Finish";    
+        }
+
     }
 }
