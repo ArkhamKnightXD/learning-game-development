@@ -34,7 +34,7 @@ public class MetroidGameController : MonoBehaviour
 
         CurrentScore = 0;
 
-        CurrentLives = 500;
+        CurrentLives = 300;
 
         CurrentTime = 60;
 
@@ -88,7 +88,7 @@ public class MetroidGameController : MonoBehaviour
 
             GameOverText.SetActive(true);
 
-            RetryText.SetActive(true);
+           // RetryText.SetActive(true);
 
             _player.gameObject.tag = "Death";
 
@@ -122,7 +122,7 @@ public class MetroidGameController : MonoBehaviour
            count++;
            StartCoroutine("SendScore");
            GameOverText.SetActive(true);
-           RetryText.SetActive(true);
+         //  RetryText.SetActive(true);
            _player.gameObject.tag = "Death";
 
            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.GameOver);
@@ -139,7 +139,7 @@ public class MetroidGameController : MonoBehaviour
            count++;
            StartCoroutine("SendScore");
            WinText.SetActive(true);
-           RetryText.SetActive(true);
+          // RetryText.SetActive(true);
 
            _player.gameObject.tag = "Finish";
 

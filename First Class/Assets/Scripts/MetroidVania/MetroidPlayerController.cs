@@ -124,6 +124,8 @@ public class MetroidPlayerController : MonoBehaviour
             _animator.SetBool("Jump", true);
 
             jumping = true;
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Jump);
         }
 
         if (jumping)
@@ -152,6 +154,8 @@ public class MetroidPlayerController : MonoBehaviour
             _animator.SetBool("Jump", true);
 
             jumping = true;
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Jump);
         }
 
         if (jumping)
@@ -179,6 +183,8 @@ public class MetroidPlayerController : MonoBehaviour
             _animator.SetBool("Slide", true);
 
             _sliding = true;
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Attack);
         }
 
         if (_sliding)

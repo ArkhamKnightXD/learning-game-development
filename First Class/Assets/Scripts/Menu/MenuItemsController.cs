@@ -9,11 +9,15 @@ public class MenuItemsController : MonoBehaviour
 {
     const float _HOVERSCALEFACTOR = 1.4f;
 
+    int sceneToContinue;
+
     GameMenuController _menuController;
 
     private void Awake()
     {
         _menuController = GameObject.Find("GlobalScriptsText").GetComponent<GameMenuController>();
+
+        //sceneToContinue = PlayerPrefs.GetInt("SavedScene");
     }
 
     public void OnMouseEnter()
@@ -41,7 +45,7 @@ public class MenuItemsController : MonoBehaviour
         switch (gameObject.name)
         {
             case "Play":
-            SceneManager.LoadScene("GameLoader");
+            SceneManager.LoadScene("MetroidVania");
             break;
 
             case "Options":
@@ -83,6 +87,7 @@ public class MenuItemsController : MonoBehaviour
         Game.CurrentGame.MusicVolume = slider.value;
 
         MenuAudioManager.Instance.Song.volume = slider.value;
+
     }
 
 
