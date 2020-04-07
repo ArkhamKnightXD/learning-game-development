@@ -27,6 +27,12 @@ public class MetroidPlayerController : MonoBehaviour
 
     float maxJumpingHighTime = 2f;
 
+    bool isDead = false;
+
+    float deathTime;
+
+    float maxDeathTime = 20f;
+
    
     private void Awake()
     {
@@ -53,15 +59,18 @@ public class MetroidPlayerController : MonoBehaviour
             Jump();    
         }
         
+        if (_player.gameObject.tag != "Death" && _player.gameObject.tag != "Finish")
+        {
+            _newPosition.x = Input.GetAxis("Horizontal") * (Input.GetButton("Fire2") ? _runningSpeed.x : _movementSpeed.x);
 
-        _newPosition.x = Input.GetAxis("Horizontal") * (Input.GetButton("Fire2") ? _runningSpeed.x : _movementSpeed.x);
-
-        _renderer.flipX=_newPosition.x < 0;
+            _renderer.flipX=_newPosition.x < 0;
 
 
-        _animator.SetFloat("Speed",_newPosition.magnitude);
+            _animator.SetFloat("Speed",_newPosition.magnitude);
        
-         _rigidbody.MovePosition(transform.position + _newPosition* Time.deltaTime);
+            _rigidbody.MovePosition(transform.position + _newPosition* Time.deltaTime);
+        }
+       
 
 
         if (_player.gameObject.tag == "PlayerSlider")
@@ -93,6 +102,13 @@ public class MetroidPlayerController : MonoBehaviour
             HighJump();
 
             _animator.SetBool("Attack", Input.GetButton("Fire1"));    
+        }
+
+        if (_player.gameObject.tag == "Death")
+        {
+
+            Die();    
+            
         }
        
     }
@@ -178,5 +194,33 @@ public class MetroidPlayerController : MonoBehaviour
                 gameObject.GetComponent<BoxCollider>().enabled = true;
             }   
         }
+    }
+
+
+    private void Die()
+    {
+
+        if (!isDead)
+        {
+            deathTime = 0f;
+
+            _animator.SetBool("Die", true);
+
+            isDead = true;
+        }
+
+        if (isDead)
+        {
+            deathTime += Time.deltaTime;
+
+            if (deathTime > maxDeathTime)
+            {
+                isDead = false;
+
+                _animator.SetBool("Die", false);
+
+            }   
+        }
+
     }
 }

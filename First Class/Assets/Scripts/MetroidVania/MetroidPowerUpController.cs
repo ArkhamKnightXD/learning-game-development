@@ -73,5 +73,16 @@ public class MetroidPowerUpController : MonoBehaviour
             other.gameObject.tag = "Finish";    
         }
 
+
+        if (gameObject.tag == "Coin")
+        {
+            gameController.IncrementScore();
+
+            Destroy(gameObject);
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+
+        }
+
     }
 }

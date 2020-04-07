@@ -30,6 +30,8 @@ TagManager:
   - Explosion
   - PlayerExplosion
   - FinalJelly
+  - Death
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -43,7 +45,7 @@ TagManager:
   - Tree
   - Character
   - BackGround
-  - 
+  - ForeGround
   - 
   - 
   - 

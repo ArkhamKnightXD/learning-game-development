@@ -56,7 +56,6 @@ public class MetroidGameController : MonoBehaviour
 
         WinText.SetActive(false);
 
-        //TimerText.transform.
     }
 
 
@@ -82,16 +81,18 @@ public class MetroidGameController : MonoBehaviour
         
         TimerText.text = CurrentTime.ToString("0");
 
-        if (CurrentTime == 0)
+        if (CurrentTime == 0 && count == 0)
         {
-
-          //  StartCoroutine("SendScore");
+            count++;
+            StartCoroutine("SendScore");
 
             GameOverText.SetActive(true);
 
             RetryText.SetActive(true);
 
-           // AudioManager.Instance.PlaySoundEffect(AudioManager.SoundEffect.GameOver);
+            _player.gameObject.tag = "Death";
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.GameOver);
             
         }
        
@@ -122,6 +123,7 @@ public class MetroidGameController : MonoBehaviour
            StartCoroutine("SendScore");
            GameOverText.SetActive(true);
            RetryText.SetActive(true);
+           _player.gameObject.tag = "Death";
 
            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.GameOver);
        }
@@ -138,6 +140,8 @@ public class MetroidGameController : MonoBehaviour
            StartCoroutine("SendScore");
            WinText.SetActive(true);
            RetryText.SetActive(true);
+
+           _player.gameObject.tag = "Finish";
 
            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Win);
        }

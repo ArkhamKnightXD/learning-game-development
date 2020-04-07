@@ -81,12 +81,18 @@ public class MenuItemsController : MonoBehaviour
     public void OnMusicVolumeChanged(Slider slider)
     {
         Game.CurrentGame.MusicVolume = slider.value;
+
+        MenuAudioManager.Instance.Song.volume = slider.value;
     }
 
 
     public void OnFXMusicChanged(Slider slider) 
     {
         Game.CurrentGame.EffectsVolume = slider.value;
+
+        MenuAudioManager.Instance.Hover.volume = slider.value;
+
+        MenuAudioManager.Instance.Click.volume = slider.value;
     }
 
 

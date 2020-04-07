@@ -228,7 +228,7 @@ MonoBehaviour:
   BgTile6: {fileID: 6391367339678437421, guid: 7382d11b8802ea547a4834b124517e2b, type: 3}
   BgTile7: {fileID: 807029424142737846, guid: a19b3e197d74fa1409490ee9c3ba2912, type: 3}
   BgTile8: {fileID: 0}
-  Fence1: {fileID: 0}
+  Fence1: {fileID: 3755807990079262684, guid: 48fcafd4ffd408e42820cf3770564479, type: 3}
   Fence2: {fileID: 0}
   Fence3: {fileID: 0}
   Spike: {fileID: 1955142830560382770, guid: a7293d0875eb83345af28b5eba34b4bd, type: 3}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 599968405}
   - component: {fileID: 599968407}
   - component: {fileID: 599968406}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 638811682}
   - component: {fileID: 638811684}
   - component: {fileID: 638811683}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: WinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 921487425}
   - component: {fileID: 921487427}
   - component: {fileID: 921487426}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: LivesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 1813612647}
   - component: {fileID: 1813612649}
   - component: {fileID: 1813612648}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TimerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813612646}
-  m_Text: 10
+  m_Text: 0
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1688,7 +1688,7 @@ GameObject:
   - component: {fileID: 2060696483}
   - component: {fileID: 2060696482}
   - component: {fileID: 2060696485}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RetryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1804,7 @@ GameObject:
   - component: {fileID: 2096304083}
   - component: {fileID: 2096304085}
   - component: {fileID: 2096304084}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2082,6 +2082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerMetroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 305262114805575455, guid: 34d800eea8e718349a101f9885ce40fb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34d800eea8e718349a101f9885ce40fb, type: 3}
