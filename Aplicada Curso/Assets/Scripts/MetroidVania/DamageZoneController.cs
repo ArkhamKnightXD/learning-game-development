@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DamageZoneController : MonoBehaviour
 {
-    public MetroidGameController gameController;
+    public MetroidGameController GameController;
 
 
     void Start()
     {
-        gameController = GameObject.Find("GlobalScriptsText").GetComponent<MetroidGameController>();
+        GameController = GameObject.Find("GlobalScriptsText").GetComponent<MetroidGameController>();
+        
     }
 
 
@@ -18,7 +19,7 @@ public class DamageZoneController : MonoBehaviour
     {
         if (other.gameObject.tag != "PlayerAntiAcid" && other.gameObject.tag != "PlayerExplosion" && gameObject.tag == "Acid")
         {
-            gameController.DecrementLives();
+            GameController.DecrementLives();
 
             AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Damage);      
         } 
@@ -26,7 +27,7 @@ public class DamageZoneController : MonoBehaviour
 
         if (gameObject.tag == "Spike")
         {
-            gameController.DecrementLives();
+            GameController.DecrementLives();
 
             AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Damage);
         }

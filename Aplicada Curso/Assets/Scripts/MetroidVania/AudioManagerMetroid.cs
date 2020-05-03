@@ -18,10 +18,14 @@ public class AudioManagerMetroid : MonoBehaviour
 
     public AudioSource Item;
 
+    public AudioSource PowerUp;
+
+    public AudioSource Timer;
+
     public AudioSource GameOver;
 
     public AudioSource Win;
-
+    
 
     private void Awake()
     {
@@ -41,6 +45,10 @@ public class AudioManagerMetroid : MonoBehaviour
         Shoot,
 
         Item,
+
+        PowerUp,
+
+        Timer,
 
         GameOver,
         
@@ -77,13 +85,24 @@ public class AudioManagerMetroid : MonoBehaviour
             Item.Play();
             break;
 
+        case SoundEffect.PowerUp:
+            PowerUp.Play();
+            break;
+
+        case SoundEffect.Timer:
+            Song.Stop();
+            Timer.Play();
+            break;
+
         case SoundEffect.GameOver:
             Song.Stop();
+            Timer.Stop();
             GameOver.Play();
             break;
 
         case SoundEffect.Win:
             Song.Stop();
+            Timer.Stop();
             Win.Play();
             break;
 

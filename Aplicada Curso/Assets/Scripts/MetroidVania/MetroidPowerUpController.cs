@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MetroidPowerUpController : MonoBehaviour
 {
-    public MetroidGameController gameController;
+    public MetroidGameController GameController;
 
 
     void Start()
     {
-        gameController = GameObject.Find("GlobalScriptsText").GetComponent<MetroidGameController>();
+        GameController = GameObject.Find("GlobalScriptsText").GetComponent<MetroidGameController>();
     }
 
 
@@ -17,11 +17,11 @@ public class MetroidPowerUpController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && gameObject.tag == "SliderPowerUp")
         {
-            gameController.IncrementScore();
+            GameController.IncrementScore();
 
             Destroy(gameObject);
 
-            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.PowerUp);
 
             other.gameObject.tag = "PlayerSlider";    
         }
@@ -29,11 +29,11 @@ public class MetroidPowerUpController : MonoBehaviour
 
         if (other.gameObject.tag == "PlayerSlider" && gameObject.tag == "HighJumpPowerUp")
         {
-            gameController.IncrementScore();
+            GameController.IncrementScore();
 
             Destroy(gameObject);
 
-            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.PowerUp);
 
             other.gameObject.tag = "PlayerHighJump";    
         }
@@ -41,11 +41,11 @@ public class MetroidPowerUpController : MonoBehaviour
 
         if (other.gameObject.tag == "PlayerHighJump" && gameObject.tag == "AntiAcidPowerUp")
         {
-            gameController.IncrementScore();
+            GameController.IncrementScore();
 
             Destroy(gameObject);
 
-            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.PowerUp);
 
             other.gameObject.tag = "PlayerAntiAcid";    
         }
@@ -53,22 +53,24 @@ public class MetroidPowerUpController : MonoBehaviour
 
         if (other.gameObject.tag == "PlayerAntiAcid" && gameObject.tag == "Explosion")
         {
-            gameController.IncrementScore();
+            GameController.IncrementScore();
 
             Destroy(gameObject);
 
-            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.PowerUp);
+
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Timer);
 
             other.gameObject.tag = "PlayerExplosion";    
         }
 
         if (other.gameObject.tag == "PlayerExplosion" && gameObject.tag == "FinalJelly")
         {
-            gameController.IncrementScore();
+            GameController.IncrementScore();
 
             Destroy(gameObject);
 
-            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.Item);
+            AudioManagerMetroid.Instance.PlaySoundEffect(AudioManagerMetroid.SoundEffect.PowerUp);
 
             other.gameObject.tag = "Finish";    
         }
@@ -76,7 +78,7 @@ public class MetroidPowerUpController : MonoBehaviour
 
         if (gameObject.tag == "Coin")
         {
-            gameController.IncrementScore();
+            GameController.IncrementScore();
 
             Destroy(gameObject);
 

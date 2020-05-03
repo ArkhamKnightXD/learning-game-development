@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class MetroidGameController : MonoBehaviour
 {
+
+    const string POWERSLIDERTEXT = "Slide ability enable press left shift to use it";
+
+    const string HIGHJUMPTEXT = "High jump ability enable you can now jump higher";
+
+    const string ANTIACIDTEXT = "Anti acid ability enable now you are invulnerable to the acid";
+
+    const string EXPLOSIONTEXT = "All items collected go back to start point to escape the explosion";
+
     public int CurrentScore;
 
     public int CurrentLives;
@@ -14,17 +23,31 @@ public class MetroidGameController : MonoBehaviour
 
     public TextMesh TimerText;
 
+    public TextMesh PowerUpText;
+
     public GameObject GameOverText;
 
     public GameObject RetryText;
 
     public GameObject WinText;
 
+    public GameObject PowerUp;
+
     public float CurrentTime;
 
     GameObject _player;
 
     int count = 0;
+
+    int count1 = 0;
+
+    int count2 = 0;
+
+    int count3 = 0;
+
+    int count4 = 0;
+
+    int count5 = 0;
 
 
     void Start()
@@ -40,11 +63,15 @@ public class MetroidGameController : MonoBehaviour
 
         LivesText = GameObject.Find("LivesText").GetComponent<TextMesh>();
 
+        PowerUpText = GameObject.Find("PowerUpText").GetComponent<TextMesh>();
+
         GameOverText = GameObject.Find("GameOverText");
 
         RetryText = GameObject.Find("RetryText");
 
         WinText = GameObject.Find("WinText");
+
+        PowerUp = GameObject.Find("PowerUpText");
 
         TimerText = GameObject.Find("TimerText").GetComponent<TextMesh>();
 
@@ -55,6 +82,8 @@ public class MetroidGameController : MonoBehaviour
         RetryText.SetActive(false);
 
         WinText.SetActive(false);
+
+        PowerUp.SetActive(false);
 
     }
 
@@ -67,10 +96,130 @@ public class MetroidGameController : MonoBehaviour
        }
         
 
-        if (_player.gameObject.tag == "Finish")
+       if (_player.gameObject.tag == "Finish")
        {
             Win();   
        }
+
+
+       if (_player.gameObject.tag == "PlayerSlider")
+       {
+            // Es necesario usar starcoroutine para llamar funciones del tipo IEnumarator
+            StartCoroutine(ShowPowerUpSlider(POWERSLIDERTEXT));   
+       }
+
+
+       if (_player.gameObject.tag == "PlayerHighJump")
+       {
+            StartCoroutine(ShowPowerUpHighJump(HIGHJUMPTEXT));   
+       }
+
+
+       if (_player.gameObject.tag == "PlayerAntiAcid")
+       {
+            StartCoroutine(ShowPowerUpAntiAcid(ANTIACIDTEXT));   
+       }
+
+
+       if (_player.gameObject.tag == "PlayerExplosion")
+       {
+            StartCoroutine(ShowPowerUpExplosion(EXPLOSIONTEXT));   
+       }
+    }
+
+
+
+    public IEnumerator ShowPowerUp(string powerUpTextToShow)
+    {
+ 
+        if (count1 == 0)
+        {
+            count1++;
+
+            PowerUp.SetActive(true);
+
+            PowerUpText.text = powerUpTextToShow;
+
+            yield return new WaitForSeconds(5);
+
+            PowerUp.SetActive(false);
+        }
+        
+    }
+
+
+    public IEnumerator ShowPowerUpSlider(string powerUpTextToShow)
+    {
+ 
+        if (count2 == 0)
+        {
+            count2++;
+
+            PowerUp.SetActive(true);
+
+            PowerUpText.text = powerUpTextToShow;
+
+            yield return new WaitForSeconds(5);
+
+            PowerUp.SetActive(false);
+        }
+        
+    }
+
+
+    public IEnumerator ShowPowerUpHighJump(string powerUpTextToShow)
+    {
+ 
+        if (count3 == 0)
+        {
+            count3++;
+
+            PowerUp.SetActive(true);
+
+            PowerUpText.text = powerUpTextToShow;
+
+            yield return new WaitForSeconds(5);
+
+            PowerUp.SetActive(false);
+        }
+        
+    }
+
+    public IEnumerator ShowPowerUpAntiAcid(string powerUpTextToShow)
+    {
+ 
+        if (count4 == 0)
+        {
+            count4++;
+
+            PowerUp.SetActive(true);
+
+            PowerUpText.text = powerUpTextToShow;
+
+            yield return new WaitForSeconds(5);
+
+            PowerUp.SetActive(false);
+        }
+        
+    }
+
+
+    public IEnumerator ShowPowerUpExplosion(string powerUpTextToShow)
+    {
+ 
+        if (count5 == 0)
+        {
+            count5++;
+
+            PowerUp.SetActive(true);
+
+            PowerUpText.text = powerUpTextToShow;
+
+            yield return new WaitForSeconds(5);
+
+            PowerUp.SetActive(false);
+        }
+        
     }
 
 
