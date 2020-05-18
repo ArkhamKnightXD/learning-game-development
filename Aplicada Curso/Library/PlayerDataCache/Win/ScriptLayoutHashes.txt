@@ -1,6 +1,6 @@
 Win
 PlayerPath?
-C:/Unity Projects/Games/MetroidVania/First Class.exe
+C:/Unity Projects/Games/MetroidVania/Space Odyssey.exe
 SceneListBegin?
 Assets/Scenes/MenuScene.unity
 Assets/Scenes/GameLoader.unity
@@ -67,6 +67,8 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 56e795595f1607af5d60065e42b9bd52 Assembly-CSharp.dll:.GameCannonController
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.WebServiceClient
 735147f2ee7307da7bb94c8c762d823e Assembly-CSharp.dll:.ProgressBarCircle
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter

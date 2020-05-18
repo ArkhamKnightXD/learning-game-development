@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/NinjaRunner.unity
-  isLoaded: 1
-  isActive: 1
